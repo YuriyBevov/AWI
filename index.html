@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АВИ - Академия Водных Искусств</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__logo">
+                    <h1>АВИ</h1>
+                </div>
+                <ul class="nav__menu">
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#programs">Программы</a></li>
+                    <li><a href="#trainers">Тренеры</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+                <div class="nav__cta">
+                    <a href="#contact" class="btn btn--primary">Записаться</a>
+                </div>
+                <div class="nav__mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">Академия Водных Искусств</h1>
+                <p class="hero__subtitle">Освойте искусство плавания и водных видов спорта с профессиональными тренерами</p>
+                <div class="hero__buttons">
+                    <a href="#programs" class="btn btn--primary btn--large">Выбрать программу</a>
+                    <a href="#about" class="btn btn--secondary btn--large">Узнать больше</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <div class="hero__image-placeholder">
+                    <span>Изображение героя</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about__container">
+            <div class="about__content">
+                <h2 class="section__title">О нашей академии</h2>
+                <p class="about__text">
+                    Академия Водных Искусств - это современный центр обучения плаванию и водным видам спорта. 
+                    Мы предлагаем профессиональные программы для всех возрастов и уровней подготовки.
+                </p>
+                <div class="about__features">
+                    <div class="feature">
+                        <div class="feature__icon">🏊‍♂️</div>
+                        <h3>Профессиональные тренеры</h3>
+                        <p>Опытные инструкторы с международными сертификатами</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon">🏊‍♀️</div>
+                        <h3>Современное оборудование</h3>
+                        <p>Новейшие технологии и безопасное оборудование</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon">🏆</div>
+                        <h3>Индивидуальный подход</h3>
+                        <p>Персональные программы для каждого ученика</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="programs__container">
+            <h2 class="section__title">Наши программы</h2>
+            <div class="programs__grid">
+                <div class="program-card">
+                    <div class="program-card__image">
+                        <div class="program-card__image-placeholder">Детское плавание</div>
+                    </div>
+                    <div class="program-card__content">
+                        <h3>Детское плавание</h3>
+                        <p>Обучение плаванию для детей от 3 лет. Безопасная и веселая атмосфера.</p>
+                        <ul class="program-card__features">
+                            <li>Возраст: 3-12 лет</li>
+                            <li>Группы до 8 человек</li>
+                            <li>Сертифицированные тренеры</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--primary">Записаться</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card__image">
+                        <div class="program-card__image-placeholder">Взрослое плавание</div>
+                    </div>
+                    <div class="program-card__content">
+                        <h3>Взрослое плавание</h3>
+                        <p>Обучение и совершенствование техники плавания для взрослых.</p>
+                        <ul class="program-card__features">
+                            <li>Все уровни подготовки</li>
+                            <li>Индивидуальные занятия</li>
+                            <li>Групповые тренировки</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--primary">Записаться</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-card__image">
+                        <div class="program-card__image-placeholder">Синхронное плавание</div>
+                    </div>
+                    <div class="program-card__content">
+                        <h3>Синхронное плавание</h3>
+                        <p>Изучение искусства синхронного плавания и водного балета.</p>
+                        <ul class="program-card__features">
+                            <li>Художественные элементы</li>
+                            <li>Командная работа</li>
+                            <li>Выступления</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--primary">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="trainers">
+        <div class="trainers__container">
+            <h2 class="section__title">Наши тренеры</h2>
+            <div class="trainers__grid">
+                <div class="trainer-card">
+                    <div class="trainer-card__image">
+                        <div class="trainer-card__image-placeholder">Тренер 1</div>
+                    </div>
+                    <div class="trainer-card__content">
+                        <h3>Анна Петрова</h3>
+                        <p class="trainer-card__specialty">Мастер спорта по плаванию</p>
+                        <p class="trainer-card__experience">Опыт работы: 10 лет</p>
+                        <p class="trainer-card__description">
+                            Специализируется на обучении детей и взрослых. 
+                            Многократный призер международных соревнований.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="trainer-card">
+                    <div class="trainer-card__image">
+                        <div class="trainer-card__image-placeholder">Тренер 2</div>
+                    </div>
+                    <div class="trainer-card__content">
+                        <h3>Михаил Соколов</h3>
+                        <p class="trainer-card__specialty">Тренер по синхронному плаванию</p>
+                        <p class="trainer-card__experience">Опыт работы: 8 лет</p>
+                        <p class="trainer-card__description">
+                            Эксперт в области синхронного плавания. 
+                            Тренер сборной команды по художественному плаванию.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="trainer-card">
+                    <div class="trainer-card__image">
+                        <div class="trainer-card__image-placeholder">Тренер 3</div>
+                    </div>
+                    <div class="trainer-card__content">
+                        <h3>Елена Волкова</h3>
+                        <p class="trainer-card__specialty">Инструктор по аквааэробике</p>
+                        <p class="trainer-card__experience">Опыт работы: 6 лет</p>
+                        <p class="trainer-card__description">
+                            Специалист по водной аэробике и реабилитации. 
+                            Сертифицированный инструктор по аквафитнесу.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="gallery__container">
+            <h2 class="section__title">Галерея</h2>
+            <div class="gallery__grid">
+                <div class="gallery__item">
+                    <div class="gallery__item-placeholder">Фото 1</div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__item-placeholder">Фото 2</div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__item-placeholder">Фото 3</div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__item-placeholder">Фото 4</div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__item-placeholder">Фото 5</div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__item-placeholder">Фото 6</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacts" class="contact">
+        <div class="contact__container">
+            <div class="contact__content">
+                <h2 class="section__title">Свяжитесь с нами</h2>
+                <p class="contact__text">
+                    Готовы начать свое путешествие в мир водных искусств? 
+                    Свяжитесь с нами для записи на занятия или получения консультации.
+                </p>
+                <div class="contact__info">
+                    <div class="contact__item">
+                        <h3>Адрес</h3>
+                        <p>г. Москва, ул. Водная, д. 1</p>
+                    </div>
+                    <div class="contact__item">
+                        <h3>Телефон</h3>
+                        <p>+7 (495) 123-45-67</p>
+                    </div>
+                    <div class="contact__item">
+                        <h3>Email</h3>
+                        <p>info@awi-academy.ru</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact__form">
+                <form class="form">
+                    <div class="form__group">
+                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                    </div>
+                    <div class="form__group">
+                        <select id="program" name="program" required>
+                            <option value="">Выберите программу</option>
+                            <option value="children">Детское плавание</option>
+                            <option value="adults">Взрослое плавание</option>
+                            <option value="synchronized">Синхронное плавание</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <textarea id="message" name="message" placeholder="Дополнительная информация" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--large">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <h3>АВИ</h3>
+                    <p>Академия Водных Искусств</p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Программы</h4>
+                        <ul>
+                            <li><a href="#programs">Детское плавание</a></li>
+                            <li><a href="#programs">Взрослое плавание</a></li>
+                            <li><a href="#programs">Синхронное плавание</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Информация</h4>
+                        <ul>
+                            <li><a href="#about">О нас</a></li>
+                            <li><a href="#trainers">Тренеры</a></li>
+                            <li><a href="#gallery">Галерея</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Контакты</h4>
+                        <ul>
+                            <li>+7 (495) 123-45-67</li>
+                            <li>info@awi-academy.ru</li>
+                            <li>г. Москва, ул. Водная, д. 1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Академия Водных Искусств. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
