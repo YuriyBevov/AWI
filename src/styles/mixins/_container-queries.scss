@@ -1,0 +1,11 @@
+@mixin container-down($name, $width) {
+  @container #{$name} (max-width: #{$width - 0.01px}) {
+    @content;
+  }
+}
+
+@mixin container-up($name, $width) {
+  @container #{$name} (min-width: #{$width} ) {
+    @content;
+  }
+}

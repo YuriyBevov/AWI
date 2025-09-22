@@ -1,0 +1,13 @@
+.title {
+	font-size: clamp(32px, 5.2vw, 48px);
+	font-weight: 600;
+	max-width: 400px;
+	margin: 0;
+	color: var(--primary-color);
+}
+
+.text {
+	font-size: 16px;
+	font-weight: 500;
+	margin: 0;
+}

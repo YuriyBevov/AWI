@@ -1,0 +1,5 @@
+---
+description: Не создавай в коде комментариев
+globs:
+alwaysApply: true
+---
