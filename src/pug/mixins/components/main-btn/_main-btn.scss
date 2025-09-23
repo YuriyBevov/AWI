@@ -1,3 +1,15 @@
+@property --btn-gradient-start {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #014fa2;
+}
+
+@property --btn-gradient-end {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #0198df;
+}
+
 %btn-base {
 	display: flex;
 	width: 100%;
@@ -10,7 +22,18 @@
 
 	border-radius: 60px;
 	border: none;
-	background: linear-gradient(to right, #014fa2, #0198df);
+
+	background: linear-gradient(
+		90deg,
+		var(--btn-gradient-start),
+		var(--btn-gradient-end)
+	);
+	transition: --btn-gradient-start 1s, --btn-gradient-end 1s;
+
+	&:hover {
+		--btn-gradient-start: #0198df;
+		--btn-gradient-end: #014fa2;
+	}
 
 	color: var(--white-color);
 	font-size: 14px;
