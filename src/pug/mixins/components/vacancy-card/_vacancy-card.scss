@@ -1,0 +1,47 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+
+.vacancy-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	background-color: var(--light-color);
+	padding: 24px;
+	border-radius: 20px;
+	max-width: 555px;
+
+	&-container {
+		container: vacancy-card / inline-size;
+	}
+
+	.label-row {
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.title {
+		font-size: 16px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	.text {
+		text-align: center;
+	}
+
+	.btn {
+		min-height: 64px;
+	}
+
+	@include container-up("vacancy-card", $mobile-width) {
+		align-items: flex-start;
+		.label-row {
+			flex-direction: row;
+		}
+		.title,
+		.text {
+			text-align: revert;
+		}
+	}
+}

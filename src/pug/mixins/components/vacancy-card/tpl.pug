@@ -1,0 +1,15 @@
+include ../../label/tpl.pug
+
+mixin vacancy-card(data)
+  .vacancy-card-container
+    .vacancy-card
+      span.title= data.title
+      .label-row
+        each label in data.labels
+          +label({
+            text: label,
+          })
+      p.text= data.text
+      +mainBtn({
+        text: 'Отправить резюме',
+      })

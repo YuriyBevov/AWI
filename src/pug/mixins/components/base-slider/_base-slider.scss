@@ -21,6 +21,12 @@
 			margin: 0;
 			margin-right: auto;
 		}
+
+		&:has(.swiper-button-prev.swiper-button-lock):has(
+				.swiper-button-next.swiper-button-lock
+			) {
+			display: none;
+		}
 	}
 
 	.swiper-button-prev,
@@ -41,6 +47,10 @@
 			width: 24px;
 			height: 24px;
 			fill: var(--white-color);
+		}
+
+		&.swiper-button-lock {
+			display: none;
 		}
 	}
 

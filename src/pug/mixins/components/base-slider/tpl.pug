@@ -13,6 +13,21 @@ mixin base-slider(data)
               text: item.text,
               image: item.image,
             })
+          if data.type === 'vacancy'
+            include ../vacancy-card/tpl.pug
+            +vacancy-card({
+              title: item.title,
+              labels: item.labels,
+              text: item.text,
+            })
+          if data.type === 'courses'
+            include ../course-card/tpl.pug
+            +course-card({
+              title: item.title,
+              programm: item.programm,
+              image: item.image,
+              price: item.price
+            })
 
     if data.navigation
       .swiper-navigation

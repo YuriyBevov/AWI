@@ -1,0 +1,83 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+
+.course-card {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	gap: 12px;
+
+	width: 100%;
+	max-width: 555px;
+	background-color: var(--white-color);
+	border-radius: 30px;
+	padding: 24px;
+
+	@include container-up("course-card", $mobile-width) {
+		display: grid;
+		grid-template-columns: auto 235px;
+		align-items: revert;
+	}
+
+	&-container {
+		display: flex;
+		height: 100%;
+		container: course-card / inline-size;
+	}
+
+	img {
+		width: 100%;
+		max-width: 180px;
+		height: auto;
+		object-fit: contain;
+
+		@include container-up("course-card", $mobile-width) {
+			margin-left: auto;
+			align-self: end;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 16px;
+		flex-grow: 1;
+
+		@include container-up("course-card", $mobile-width) {
+			align-items: revert;
+			text-align: revert;
+		}
+
+		.title {
+			font-size: clamp(20px, 2.6vw, 24px);
+		}
+
+		.subtitle {
+			span {
+				font-size: 1.5em;
+				white-space: nowrap;
+				color: var(--danger-color);
+			}
+		}
+
+		ul {
+			padding: 0;
+			padding-left: 16px;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		.subtitle {
+			margin-top: auto;
+		}
+		&:not(:has(.subtitle)) {
+			.btn {
+				margin-top: auto;
+			}
+		}
+	}
+}

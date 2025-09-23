@@ -17,8 +17,12 @@
 // Mixins and components
 @use "@pug/mixins/label/_label.scss";
 @use "@pug/mixins/components/staff-preview-card/_staff-preview-card.scss";
+@use "@pug/mixins/components/vacancy-card/_vacancy-card.scss";
+@use "@pug/mixins/components/course-card/_course-card.scss";
 @use "@pug/mixins/components/main-btn/_main-btn.scss";
 @use "@pug/mixins/components/base-slider/_base-slider.scss";
 
 // Sections
 @use "@pug/sections/staff/_staff.scss";
+@use "@pug/sections/vacancy/_vacancy.scss";
+@use "@pug/sections/courses/_courses.scss";

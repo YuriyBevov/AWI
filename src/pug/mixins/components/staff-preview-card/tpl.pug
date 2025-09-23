@@ -5,7 +5,7 @@ include ../main-btn/tpl.pug
 mixin staff-preview-card(data)
   .staff-preview-card-container
     .staff-preview-card(class= data.cls ? data.cls : null)
-      img(src= data.image, alt= data.name)
+      img(src= data.image alt= data.name width="360" height="540")
       .staff-preview-card__content
         span.title= data.name    
         +label({

@@ -1,0 +1,15 @@
+mixin course-card(data)
+  .course-card-container
+    .course-card
+      .course-card__content
+        span.title= data.title
+
+        each item in data.programm
+          span.text!= '- ' + item
+        
+        span.subtitle!= 'Стоимость программы:<br> от <span>' + data.price + '</span> рублей'
+
+        +mainBtn({
+          text: 'Записаться',
+        })
+      img(src= data.image alt= data.name width="235" height="270")
