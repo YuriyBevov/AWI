@@ -1,5 +1,0 @@
----
-description: Файлы с миксинами должны называться точно так же, как называются сами миксины. Например, миксин sectionTemplate должен находиться в файле sectionTemplate.pug
-globs:
-alwaysApply: true
----
