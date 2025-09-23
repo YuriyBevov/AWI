@@ -25,6 +25,8 @@ body {
 }
 
 body {
+	container: main / inline-size;
+
 	&::-webkit-scrollbar {
 		background-color: var(--scrollbar-color);
 		width: var(--scrollbar-width);
@@ -50,7 +52,7 @@ body {
 	background-color: var(--site-bg-color);
 	overflow-x: hidden !important;
 	-webkit-font-smoothing: antialiased;
-	scrollbar-gutter: stable;
+	// scrollbar-gutter: stable;
 
 	&.body-locked {
 		overflow: hidden;

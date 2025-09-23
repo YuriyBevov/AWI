@@ -18,7 +18,7 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
-	padding: 16px 20px;
+	padding: 16px 24px;
 
 	border-radius: 60px;
 	border: none;
@@ -48,7 +48,7 @@
 .btn {
 	@extend %btn-base;
 
-	&:has(.btn-icon-wrap) {
+	&:has(.btn__icon-wrap) {
 		padding: 6px;
 		padding-left: 20px;
 	}

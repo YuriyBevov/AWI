@@ -1,0 +1,61 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+.base-slider {
+	position: relative;
+	padding: 0 50px;
+
+	.swiper-slide {
+		height: auto;
+	}
+
+	.swiper-navigation {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin: 0 auto;
+		width: fit-content;
+		padding: 30px 6px 6px;
+
+		@include container-up("main", $mobile-width) {
+			margin: 0;
+			margin-right: auto;
+		}
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+
+		border-radius: 50%;
+		border: none;
+		background: var(--blue-gradient-color);
+		z-index: 11;
+		transition: opacity var(--main-transition);
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: var(--white-color);
+		}
+	}
+
+	.swiper-button-disabled {
+		opacity: 0.5;
+		cursor: default;
+		pointer-events: none;
+	}
+
+	.swiper-button-prev {
+		left: 10px;
+		transform: rotate(180deg);
+	}
+
+	.swiper-button-next {
+		right: 10px;
+	}
+}
