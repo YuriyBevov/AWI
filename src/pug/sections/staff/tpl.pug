@@ -11,41 +11,33 @@ block content
   //- </div> 
   //- закрываем .container если нужно
   .section__content
-    include ../../mixins/components/staff-preview-card/tpl.pug
-    .swiper.base-slider
-      .swiper-wrapper
-        .swiper-slide
-          +staff-preview-card({
-            cls: '',
-            name: 'Аникеева Алёна Алексеевна',
-            label: '19 сентября 1993 г.р.',
-            position: 'Руководитель академии водных искусств',
-            text: 'Мастер спорта России по синхронному плаванию. Образование Российский Государственный Университет Физической Культуры, Спорта, Молодежи и Туризма (ГЦОЛИФК) 2015г.',
-            image: './assets/img/coach_1.png',
-          })
-        .swiper-slide
-          +staff-preview-card({
-            cls: '',
-            name: 'Дубина Кристина Алексеевна',
-            label: '19 сентября 1993 г.р.',
-            position: 'Старший тренер академии водных искусств',
-            text: 'Мастер спорта России по синхронному плаванию. Образование Московское среднее специальное училище олимпийского резерва №3 2018г.',
-            image: './assets/img/coach_2.png',
-          })
-        .swiper-slide
-          +staff-preview-card({
-            cls: '',
-            name: 'Константинов Константин Константинович',
-            label: '19 сентября 1993 г.р.',
-            position: 'Старший тренер академии водных искусств',
-            text: 'Мастер спорта России по синхронному плаванию.',
-            image: './assets/img/coach_3.png',
-          })
+    include ../../mixins/components/base-slider/tpl.pug
 
-      .swiper-navigation
-        button(aria-label="Назад").swiper-button-prev
-          svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-            use(xlink:href="./assets/sprite.svg#chevron")
-        button(aria-label="Вперёд").swiper-button-next
-          svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-            use(xlink:href="./assets/sprite.svg#chevron")
+    +base-slider({
+      type: 'staff-preview',
+      navigation: true,
+      items: [
+        {
+          name: 'Аникеева Алёна Алексеевна',
+          label: '19 сентября 1993 г.р.',
+          position: 'Руководитель академии водных искусств',
+          text: 'Мастер спорта России по синхронному плаванию. Образование Российский Государственный Университет Физической Культуры, Спорта, Молодежи и Туризма (ГЦОЛИФК) 2015г.',
+          image: './assets/img/coach_1.png',
+        },
+        {
+          name: 'Дубина Кристина Алексеевна',
+          label: '19 сентября 1993 г.р.',
+          position: 'Старший тренер академии водных искусств',
+          text: 'Мастер спорта России по синхронному плаванию. Образование Московское среднее специальное училище олимпийского резерва №3 2018г.',
+          image: './assets/img/coach_2.png',
+        },
+        {
+          name: 'Константинов Константин Константинович',
+          label: '19 сентября 1993 г.р.',
+          position: 'Старший тренер академии водных искусств',
+          text: 'Мастер спорта России по синхронному плаванию.',
+          image: './assets/img/coach_3.png',
+        }
+      ]
+    })
+

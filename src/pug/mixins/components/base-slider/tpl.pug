@@ -1,0 +1,24 @@
+mixin base-slider(data)
+  .swiper.base-slider
+    .swiper-wrapper
+      each item in data.items
+        .swiper-slide
+          if data.type === 'staff-preview'
+            include ../staff-preview-card/tpl.pug
+            +staff-preview-card({
+              cls: item.cls ? item.cls : null,
+              name: item.name,
+              label: item.label,
+              position: item.position,
+              text: item.text,
+              image: item.image,
+            })
+
+    if data.navigation
+      .swiper-navigation
+        button(aria-label="Назад").swiper-button-prev
+          svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+            use(xlink:href="./assets/sprite.svg#chevron")
+        button(aria-label="Вперёд").swiper-button-next
+          svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+            use(xlink:href="./assets/sprite.svg#chevron")

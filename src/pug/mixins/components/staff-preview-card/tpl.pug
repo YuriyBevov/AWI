@@ -7,8 +7,7 @@ mixin staff-preview-card(data)
     .staff-preview-card(class= data.cls ? data.cls : null)
       img(src= data.image, alt= data.name)
       .staff-preview-card__content
-        
-        span.title= data.name
+        span.title= data.name    
         +label({
           text: data.label,
           cls: 'label--bordered'
