@@ -7,11 +7,17 @@
 @use "base/typography" as *;
 
 // Mixins
-@use "mixins/container-queries" as *;
-@use "mixins/font-face" as *;
+// @use "mixins/container-queries" as *;
+// @use "mixins/font-face" as *;
+// @use "mixins/text-truncate" as *;
 
 // Layouts
 @use "@pug/layouts/section/_section.scss";
+
+// Mixins and components
+@use "@pug/mixins/label/_label.scss";
+@use "@pug/mixins/components/staff-preview-card/_staff-preview-card.scss";
+@use "@pug/mixins/components/main-btn/_main-btn.scss";
 
 // Sections
 @use "@pug/sections/staff/_staff.scss";

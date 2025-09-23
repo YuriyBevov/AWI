@@ -1,0 +1,20 @@
+
+include ../../label/tpl.pug
+include ../main-btn/tpl.pug
+
+mixin staff-preview-card(data)
+  .staff-preview-card-container
+    .staff-preview-card(class= data.cls ? data.cls : null)
+      img(src= data.image, alt= data.name)
+      .staff-preview-card__content
+        
+        span.title= data.name
+        +label({
+          text: data.label,
+          cls: 'label--bordered'
+        })
+        span.subtitle= data.position
+        p.text= data.text
+        +mainBtn({
+          isIconed: true
+        })

@@ -1,12 +1,16 @@
 extends ../../layouts/section/tpl.pug
 
 block variables
-  - sectionClass = 'staff'
+  - sectionClass = 'about'
   - sectionContainerClass = ''
-  - sectionHeadline = 'О нас'
+  - sectionLabel = { text: 'О нас', class: 'label--bordered label--dotted' }
   - sectionTitle = 'Академия водных искусств'
   - sectionText = '<p>— объединяет профессионалов и любителей, обеспечивая идеальные условия для обучения и развития в области синхронного плавания, плавания других водных активностей.</p><p>В нашей академии вы сможете не только освоить технику плавания, но и открывать для себя мир спортивных достижений.</p>'
 
 block content
   .content
     p content
+    include ../../mixins/components/main-btn/tpl.pug
+    +mainBtn({
+      isIconed: true,
+    })

@@ -1,5 +1,5 @@
 .section {
-	&:nth-child(odd) {
+	&--decorated {
 		position: relative;
 		margin: 100px 0;
 		background-color: var(--light-color);
@@ -23,11 +23,8 @@
 		}
 	}
 
-	&:nth-child(even) {
+	&:not(&--decorated) {
 		padding: 60px 0;
-		.section__headline {
-			border: 2px solid rgba(77, 114, 152, 0.15);
-		}
 	}
 
 	&__header {
@@ -35,31 +32,5 @@
 		flex-direction: column;
 		gap: clamp(16px, 3vw, 24px);
 		margin-bottom: clamp(20px, 3vw, 32px);
-	}
-
-	&__headline {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 12px;
-		font-weight: 600;
-		padding: 14px 20px 12px;
-		padding-left: 36px;
-		width: fit-content;
-		background-color: var(--white-color);
-		border-radius: 60px;
-
-		&::before {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			left: 20px;
-			content: "";
-			width: 6px;
-			height: 6px;
-			background: var(--blue-gradient-color);
-			border-radius: 50%;
-		}
 	}
 }

@@ -1,0 +1,36 @@
+@use "@styles/mixins/text-truncate" as *;
+
+.staff-preview-card {
+	display: grid;
+	grid-template-columns: 260px auto;
+	border-radius: 30px;
+	overflow: hidden;
+	width: 100%;
+	max-width: 550px;
+	background-color: var(--white-color);
+
+	&-container {
+		container: staff-preview-card / inline-size;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		padding: 24px;
+
+		.title {
+			font-size: clamp(20px, 2.6vw, 24px);
+		}
+
+		.text {
+			@include text-truncate(5);
+		}
+	}
+}

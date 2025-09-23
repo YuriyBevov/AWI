@@ -1,0 +1,48 @@
+%btn-base {
+	display: flex;
+	width: 100%;
+	min-width: 140px;
+	max-width: fit-content;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 16px 20px;
+
+	border-radius: 60px;
+	border: none;
+	background: linear-gradient(to right, #014fa2, #0198df);
+
+	color: var(--white-color);
+	font-size: 14px;
+	font-weight: 700;
+
+	span {
+		flex-grow: 1;
+		text-align: center;
+	}
+}
+
+.btn {
+	@extend %btn-base;
+
+	&:has(.btn-icon-wrap) {
+		padding: 6px;
+		padding-left: 20px;
+	}
+
+	&__icon-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		background-color: var(--gray-color);
+
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: var(--secondary-color);
+		}
+	}
+}

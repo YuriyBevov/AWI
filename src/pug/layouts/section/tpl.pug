@@ -1,22 +1,28 @@
 block variables
   - sectionClass = ''
   - sectionContainerClass = ''
-  - sectionHeadline = ''
+  - sectionLabel = {}
   - sectionTitle = ''
   - sectionText  = ''
   - hideSectionHeader = ''
+
+include ../../mixins/label/tpl.pug
 
 section.section(class= sectionClass)
   .container(class= sectionContainerClass)
 
     if hideSectionHeader != true
       .section__header
-        if sectionHeadline
-          span.section__headline!= sectionHeadline
+        if sectionLabel
+          +label({
+            text: sectionLabel.text,
+            cls: sectionLabel.class
+          })
         if sectionTitle
           h2.title!= sectionTitle
         if sectionText
-          != sectionText
+          .section__text
+            != sectionText
     block content
 
 - hideSectionHeader = ''

@@ -3,7 +3,7 @@ import vituum from "vituum";
 import pug from "@vituum/vite-plugin-pug";
 import pages from "vituum/plugins/pages.js";
 import imports from "vituum/plugins/imports.js";
-import VitePluginSvgSpritemap from "@spiriit/vite-plugin-svg-spritemap";
+import svgSpritemap from "vite-plugin-svg-spritemap";
 import { resolve } from "path";
 import { defineConfig } from "vite";
 
@@ -28,31 +28,24 @@ export default defineConfig({
 			root: "./",
 			normalizeBasePath: true,
 		}),
-		// VitePluginSvgSpritemap("./src/assets/sprite/*.svg", {
-		// 	styles: false,
-		// 	injectSVGOnDev: true,
 
-		// 	prefix: "", // префикс перед иконкой use(xlink:href='./sprite.svg#{PREFIX}icon-chevron-down')
-		// 	route: "assets/sprite.svg", // название файла спрайта use(xlink:href='./{ROUTE}#icon-chevron-down')
-		// 	output: {
-		// 		filename: "sprite.svg", // название файла спрайта на выходе
-		// 		view: true,
-		// 		use: true,
-		// 	},
-		// 	svgo: {
-		// 		plugins: [
-		// 			{
-		// 				name: "removeStyleElement",
-		// 			},
-		// 			{
-		// 				name: "removeAttrs",
-		// 				params: {
-		// 					attrs: "(fill|height|width)",
-		// 				},
-		// 			},
-		// 		],
-		// 	},
-		// }),
+		svgSpritemap({
+			pattern: "./src/assets/sprite/*.svg",
+			filename: "assets/sprite.svg",
+			prefix: "",
+			svgo: {
+				multipass: true,
+				plugins: [
+					{ name: "cleanupAttrs", params: { removeEmptyAttrs: true } },
+					{
+						name: "removeAttrs",
+						params: {
+							attrs: ["fill", "fill-rule", "stroke", "stroke-width"],
+						},
+					},
+				],
+			},
+		}),
 	],
 
 	css: {

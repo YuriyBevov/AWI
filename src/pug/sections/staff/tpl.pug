@@ -1,12 +1,36 @@
 extends ../../layouts/section/tpl.pug
 
 block variables
-  - sectionClass = 'staff'
+  - sectionClass = 'staff section--decorated'
   - sectionContainerClass = ''
-  - sectionHeadline = 'Наша команда'
+  - sectionLabel = { text: 'Наша команда', class: 'label--dotted' }
   - sectionTitle = 'Тренеры'
   - sectionText = '<p>Мы гордимся нашей высококвалифицированной командой тренеров, которые имеют богатый опыт и стремление передать свои знания каждому ученику.</p>'
 
 block content
   .content
-    p content
+    include ../../mixins/components/staff-preview-card/tpl.pug
+    +staff-preview-card({
+      cls: '',
+      name: 'Аникеева Алёна Алексеевна',
+      label: '19 сентября 1993 г.р.',
+      position: 'Руководитель академии водных искусств',
+      text: 'Мастер спорта России по синхронному плаванию. Образование Российский Государственный Университет Физической Культуры, Спорта, Молодежи и Туризма (ГЦОЛИФК) 2015г.',
+      image: './assets/img/coach_1.png',
+    })
+    +staff-preview-card({
+      cls: '',
+      name: 'Дубина Кристина Алексеевна',
+      label: '19 сентября 1993 г.р.',
+      position: 'Старший тренер академии водных искусств',
+      text: 'Мастер спорта России по синхронному плаванию. Образование Московское среднее специальное училище олимпийского резерва №3 2018г.',
+      image: './assets/img/coach_2.png',
+    })
+    +staff-preview-card({
+      cls: '',
+      name: 'Константинов Константин Константинович',
+      label: '19 сентября 1993 г.р.',
+      position: 'Старший тренер академии водных искусств',
+      text: 'Мастер спорта России по синхронному плаванию.',
+      image: './assets/img/coach_3.png',
+    })
