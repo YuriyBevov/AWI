@@ -595,6 +595,31 @@ img {
 
 .courses .base-slider .swiper-slide {
   max-width: 555px;
+}
+
+.fees {
+  margin: 0 10px;
+}
+.fees .container {
+  border-radius: 30px;
+  background-image: url("../img/fees-bg.png");
+  background-size: cover;
+  padding-top: clamp(10px, 5vw, 40px);
+  padding-bottom: clamp(10px, 5vw, 40px);
+  max-width: calc(var(--container-width) - clamp(20px, 5vw, 40px) * 2);
+}
+.fees .section__header {
+  max-width: 580px;
+  padding: clamp(20px, 5vw, 40px);
+  border-radius: 20px;
+  margin-bottom: 0;
+  background-color: var(--white-color);
+}
+.fees .section__text p {
+  margin: 0;
+}
+.fees .section__text p:not(:last-child) {
+  margin-bottom: 1em;
 }/**
  * Swiper 12.0.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
