@@ -5,8 +5,10 @@ block variables
   - sectionTitle = ''
   - sectionText  = ''
   - hideSectionHeader = ''
+  - sectionBtn = {}
 
 include ../../mixins/label/tpl.pug
+include ../../mixins/components/main-btn/tpl.pug
 
 section.section(class= sectionClass)
   .container(class= sectionContainerClass)
@@ -23,6 +25,10 @@ section.section(class= sectionClass)
         if sectionText
           .section__text
             != sectionText
+        if sectionBtn
+          +mainBtn({
+            text: sectionBtn.text
+          })
     block content
 
 - hideSectionHeader = ''
