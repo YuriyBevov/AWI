@@ -244,9 +244,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   font-size: 12px;
   font-weight: 600;
-  padding: 14px 20px 12px;
+  padding: 12px 20px 12px;
   width: fit-content;
   background-color: var(--white-color);
   border-radius: 60px;
@@ -268,6 +269,14 @@ img {
   height: 6px;
   background: var(--blue-gradient-color);
   border-radius: 50%;
+}
+.label img {
+  width: 16px;
+  height: auto;
+  object-fit: contain;
+}
+.label span {
+  padding-top: 2px;
 }
 
 .staff-preview-card {
@@ -489,13 +498,6 @@ img {
   border-radius: 60px;
   border: none;
   background: linear-gradient(90deg, var(--btn-gradient-start), var(--btn-gradient-end));
-  transition: --btn-gradient-start 1s, --btn-gradient-end 1s;
-}
-.btn:hover {
-  --btn-gradient-start: #0198df;
-  --btn-gradient-end: #014fa2;
-}
-.btn {
   color: var(--white-color);
   font-size: 14px;
   font-weight: 700;
@@ -503,6 +505,14 @@ img {
 .btn span {
   flex-grow: 1;
   text-align: center;
+}
+
+.btn:not(.btn--static) {
+  transition: --btn-gradient-start 1s, --btn-gradient-end 1s;
+}
+.btn:hover:not(.btn--static) {
+  --btn-gradient-start: #0198df;
+  --btn-gradient-end: #014fa2;
 }
 
 .btn:has(.btn__icon-wrap) {
@@ -585,6 +595,127 @@ img {
   right: 10px;
 }
 
+.switcher {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  border-radius: 60px;
+  border: 2px solid var(--gray-color);
+  overflow: hidden;
+}
+.switcher::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: var(--gray-color);
+  content: "";
+}
+.switcher .btn {
+  justify-content: center;
+  width: calc(50vw - 2px - var(--container-offset));
+  max-width: 210px;
+  min-width: initial;
+  border-radius: 0;
+  font-size: 12px;
+  background: none;
+  background-color: var(--white-color);
+  color: var(--secondary-color);
+  background-color: var(--white-color);
+}
+.switcher .btn.active {
+  background: var(--blue-gradient-color);
+  color: var(--white-color);
+  background-color: revert;
+  pointer-events: none;
+}
+
+.switch-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1.8s ease, visibility 0.3s ease;
+  z-index: -1;
+}
+.switch-item.active {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+
+.schedule-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  background-color: var(--white-color);
+  border-radius: 30px;
+  padding: 24px;
+}
+.schedule-card-container {
+  container: schedule-card/inline-size;
+}
+@container schedule-card (min-width: 420px ) {
+  .schedule-card {
+    align-items: revert;
+  }
+}
+.schedule-card .title {
+  text-align: center;
+  font-size: clamp(20px, 2.6vw, 24px);
+}
+@container schedule-card (min-width: 420px ) {
+  .schedule-card .title {
+    text-align: revert;
+  }
+}
+.schedule-card .subtitle {
+  text-align: center;
+  font-size: clamp(14px, 2.2vw, 18px);
+}
+@container schedule-card (min-width: 420px ) {
+  .schedule-card .subtitle {
+    text-align: revert;
+  }
+}
+.schedule-card .workday-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+@container schedule-card (min-width: 420px ) {
+  .schedule-card .workday-row {
+    justify-content: revert;
+  }
+}
+.schedule-card .workday-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: var(--white-color);
+  border: 2px solid var(--gray-color);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 3px 3px 3px;
+}
+.schedule-card .workday-label.active {
+  background: linear-gradient(90deg, #014fa2 0%, #0198df 100%);
+  color: var(--white-color);
+}
+
 .staff .base-slider .swiper-slide {
   max-width: 555px;
 }
@@ -602,7 +733,7 @@ img {
 }
 .fees .container {
   border-radius: 30px;
-  background-image: url("../img/fees-bg.png");
+  background-image: image-set(url("../webp/fees-bg.webp") type("image/webp") 1x, url("../webp/fees-bg@2x.webp") type("image/webp") 2x, url("../img/fees-bg.png") type("image/png") 1x, url("../img/fees-bg@2x.png") type("image/png") 2x);
   background-size: cover;
   padding-top: clamp(10px, 5vw, 40px);
   padding-bottom: clamp(10px, 5vw, 40px);
@@ -620,6 +751,40 @@ img {
 }
 .fees .section__text p:not(:last-child) {
   margin-bottom: 1em;
+}
+
+.affiliate {
+  container: affiliate/inline-size;
+}
+.affiliate .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 30px);
+}
+@container affiliate (min-width: 768px ) {
+  .affiliate .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.affiliate .switcher {
+  margin-bottom: clamp(20px, 3vw, 30px);
+}
+.affiliate iframe,
+.affiliate .switcher {
+  grid-column: -1/1;
+}
+.affiliate picture {
+  display: flex;
+  overflow: hidden;
+}
+.affiliate picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.affiliate picture,
+.affiliate iframe {
+  border-radius: 30px;
 }/**
  * Swiper 12.0.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -857,3 +1022,23 @@ img {
   }
 }
 /* Slide styles end */
+.swiper-fade {
+  &.swiper-free-mode {
+    .swiper-slide {
+      transition-timing-function: ease-out;
+    }
+  }
+  .swiper-slide {
+    pointer-events: none;
+    transition-property: opacity;
+    .swiper-slide {
+      pointer-events: none;
+    }
+  }
+  .swiper-slide-active {
+    pointer-events: auto;
+    & .swiper-slide-active {
+      pointer-events: auto;
+    }
+  }
+}

@@ -28,12 +28,6 @@
 		var(--btn-gradient-start),
 		var(--btn-gradient-end)
 	);
-	transition: --btn-gradient-start 1s, --btn-gradient-end 1s;
-
-	&:hover {
-		--btn-gradient-start: #0198df;
-		--btn-gradient-end: #014fa2;
-	}
 
 	color: var(--white-color);
 	font-size: 14px;
@@ -45,8 +39,21 @@
 	}
 }
 
+%btn-effect {
+	transition: --btn-gradient-start 1s, --btn-gradient-end 1s;
+
+	&:hover {
+		--btn-gradient-start: #0198df;
+		--btn-gradient-end: #014fa2;
+	}
+}
+
 .btn {
 	@extend %btn-base;
+
+	&:not(.btn--static) {
+		@extend %btn-effect;
+	}
 
 	&:has(.btn__icon-wrap) {
 		padding: 6px;

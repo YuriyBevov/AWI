@@ -1,0 +1,58 @@
+.switcher {
+	position: relative;
+	display: flex;
+	width: fit-content;
+	border-radius: 60px;
+	border: 2px solid var(--gray-color);
+	overflow: hidden;
+
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 2px;
+		height: 100%;
+		background-color: var(--gray-color);
+		content: "";
+	}
+
+	.btn {
+		justify-content: center;
+		width: calc(50vw - 2px - var(--container-offset));
+		max-width: 210px;
+		min-width: initial;
+		border-radius: 0;
+		font-size: 12px;
+
+		background: none;
+		background-color: var(--white-color);
+		color: var(--secondary-color);
+		background-color: var(--white-color);
+
+		&.active {
+			background: var(--blue-gradient-color);
+			color: var(--white-color);
+			background-color: revert;
+			pointer-events: none;
+		}
+	}
+}
+
+.switch-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.8s ease, visibility 0.3s ease;
+	z-index: -1;
+
+	&.active {
+		position: relative;
+		visibility: visible;
+		opacity: 1;
+		z-index: 1;
+	}
+}

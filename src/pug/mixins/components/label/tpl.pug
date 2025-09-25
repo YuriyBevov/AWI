@@ -1,0 +1,7 @@
+
+
+mixin label(data)
+  .label(class=(data.cls ? data.cls : ''))
+    if data.icon
+      img(src=`./assets/img/${data.icon}.svg` alt="Иконка" width="16" height="16")
+    span!= data.text

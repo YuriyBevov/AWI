@@ -1,0 +1,16 @@
+include ../label/tpl.pug
+include ../main-btn/tpl.pug
+
+mixin schedule-card(data)
+  .schedule-card-container
+    .schedule-card
+      span.title= data.title
+      span.subtitle!=  data.address
+      +label(data.label)
+      .workday-row
+        each day in data.workdays
+          .workday-label(class= day.active ? 'active' : '')!= day.text
+      span.subtitle!=  data.worktime
+      +mainBtn({
+        text: 'Узнать стоимость',
+      })

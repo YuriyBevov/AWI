@@ -1,0 +1,4 @@
+mixin switcher(data)
+  .switcher
+    each switcher in data.items
+      button.btn.btn--static(type="button" data-content-id= switcher.dataID class= switcher.active ? 'active' : '')= switcher.title

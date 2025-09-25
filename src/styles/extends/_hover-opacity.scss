@@ -1,0 +1,14 @@
+%hover-opacity {
+	transition: opacity 0.3s ease-in-out;
+	opacity: 1;
+
+	@media (hover: hover) {
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	&:focus {
+		opacity: 0.6;
+	}
+}
