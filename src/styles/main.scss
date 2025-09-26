@@ -12,9 +12,11 @@
 // @use "mixins/text-truncate" as *;
 
 // Layouts
+@use "@pug/layouts/header/_header.scss";
 @use "@pug/layouts/section/_section.scss";
 
 // Mixins and components
+@use "@pug/mixins/components/nav/_nav.scss";
 @use "@pug/mixins/components/label/_label.scss";
 @use "@pug/mixins/components/staff-preview-card/_staff-preview-card.scss";
 @use "@pug/mixins/components/vacancy-card/_vacancy-card.scss";
@@ -23,9 +25,15 @@
 @use "@pug/mixins/components/base-slider/_base-slider.scss";
 @use "@pug/mixins/components/switcher/_switcher.scss";
 @use "@pug/mixins/components/schedule-card/_schedule-card.scss";
+@use "@pug/mixins/components/social/_social.scss";
+@use "@pug/mixins/components/link/_link.scss";
+@use "@pug/mixins/components/company-info/_company-info.scss";
 // Sections
 @use "@pug/sections/staff/_staff.scss";
 @use "@pug/sections/vacancy/_vacancy.scss";
 @use "@pug/sections/courses/_courses.scss";
 @use "@pug/sections/fees/_fees.scss";
 @use "@pug/sections/affiliate/_affiliate.scss";
+
+// Layouts
+@use "@pug/layouts/footer/_footer.scss";

@@ -1,0 +1,22 @@
+@use "@styles/extends/_hover-opacity";
+.link {
+	font-size: clamp(16px, 2vw, 18px);
+	color: var(--primary-color);
+
+	@extend %hover-opacity;
+
+	&--bolder {
+		font-weight: 600;
+	}
+
+	&--underlined {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+
+	&--size-xs {
+		font-size: 14px;
+	}
+
+	@extend %hover-opacity;
+}

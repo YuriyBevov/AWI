@@ -1,0 +1,13 @@
+.company-info {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	span {
+		font-size: 14px;
+		color: var(--primary-color);
+	}
+
+	.heading {
+		font-weight: 600;
+	}
+}

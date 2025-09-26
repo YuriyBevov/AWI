@@ -1,3 +1,4 @@
+@use "@styles/extends/_hover-opacity";
 @property --btn-gradient-start {
 	syntax: "<color>";
 	inherits: false;
@@ -40,7 +41,8 @@
 }
 
 %btn-effect {
-	transition: --btn-gradient-start 1s, --btn-gradient-end 1s;
+	transition: --btn-gradient-start 1s, --btn-gradient-end 1s,
+		opacity var(--main-transition);
 
 	&:hover {
 		--btn-gradient-start: #0198df;
@@ -73,6 +75,24 @@
 			width: 16px;
 			height: 16px;
 			fill: var(--secondary-color);
+		}
+	}
+
+	&--outlined {
+		background: none;
+		background-color: var(--white-color);
+		border: 2px solid var(--gray-color);
+		color: var(--primary-color);
+		@extend %hover-opacity;
+
+		span {
+			padding-top: 2px;
+		}
+	}
+
+	&--anchor {
+		svg {
+			transform: rotate(90deg);
 		}
 	}
 }

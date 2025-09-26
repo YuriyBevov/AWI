@@ -1,0 +1,6 @@
+mixin nav(data)
+  nav.nav(class=data.cls ? data.cls : null)
+    ul.nav__list
+      each item in data.items
+        li.nav__list-item
+          a.nav__list-link(href=item.link)= item.text

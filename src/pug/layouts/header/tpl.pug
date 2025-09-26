@@ -1,0 +1,84 @@
+include ../../mixins/components/social/tpl.pug
+include ../../mixins/components/main-btn/tpl.pug
+include ../../mixins/components/link/tpl.pug
+include ../../mixins/components/company-info/tpl.pug
+include ../../mixins/components/nav/tpl.pug
+
+header.header
+  .container
+    .header__top
+      +mainBtn({
+        tag: "a",
+        text: "Филиалы",
+        href: "#affiliates",
+        cls: "btn--outlined btn--anchor",
+        isIconed: true
+      })
+      
+      a(href="/").logo
+        img(src="./assets/img/logo.svg" alt="logo")
+      
+      +social({
+        items: [
+          {
+            link: "#",
+            icon: "./assets/img/tg-filled-icon.png",
+            alt: "telegram"
+          },
+          {
+            link: "#",
+            icon: "./assets/img/whatsapp-filled-icon.png",
+            alt: "whatsapp"
+          },
+          {
+            link: "#",
+            icon: "./assets/img/mail-filled-icon.png",
+            alt: "E-mail"
+          }
+        ]
+      })
+      
+      +link({
+        href: "tel:88002006655",
+        text: "8 (800) 200 66 55",
+        cls: "link--bolder"
+      })
+
+      +mainBtn({
+        text: "Обратный звонок",
+      })
+    
+    .header__bottom
+      +nav({
+        cls: "nav--footer",
+        items: [
+          {
+            link: "#about",
+            text: "О нас"
+          },
+          {
+            link: "#online-training",
+            text: "Онлайн тренировки"
+          },
+          {
+            link: "#vacancies",
+            text: "Вакансии"
+          },
+          {
+            link: "#reviews",
+            text: "Отзывы"
+          },
+          {
+            link: "#callback",
+            text: "Нужна помощь?"
+          }
+        ]
+      })
+    
+    
+
+    
+    
+
+
+            

@@ -9,11 +9,14 @@ html(lang="ru")
 		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet")
 		link(rel="stylesheet" href="./styles/main.scss")
 	body
-		include ./pug/sections/staff/tpl.pug
-		include ./pug/sections/about/tpl.pug
-		include ./pug/sections/affiliate/tpl.pug
-		include ./pug/sections/fees/tpl.pug
-		include ./pug/sections/courses/tpl.pug
-		include ./pug/sections/vacancy/tpl.pug
+		include ./pug/layouts/header/tpl.pug
+		main
+			include ./pug/sections/staff/tpl.pug
+			include ./pug/sections/about/tpl.pug
+			include ./pug/sections/affiliate/tpl.pug
+			include ./pug/sections/fees/tpl.pug
+			include ./pug/sections/courses/tpl.pug
+			include ./pug/sections/vacancy/tpl.pug
+		include ./pug/layouts/footer/tpl.pug
 
 		script(type="module" src="./js/main.js")

@@ -1,3 +1,4 @@
+@use "@styles/extends/_hover-opacity";
 *,
 *::before,
 *::after {
@@ -25,8 +26,6 @@ body {
 }
 
 body {
-	container: main / inline-size;
-
 	&::-webkit-scrollbar {
 		background-color: var(--scrollbar-color);
 		width: var(--scrollbar-width);
@@ -93,4 +92,8 @@ address {
 picture,
 img {
 	display: flex;
+}
+
+.logo {
+	@extend %hover-opacity;
 }

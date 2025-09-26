@@ -1,0 +1,92 @@
+include ../../mixins/components/social/tpl.pug
+include ../../mixins/components/main-btn/tpl.pug
+include ../../mixins/components/link/tpl.pug
+include ../../mixins/components/company-info/tpl.pug
+include ../../mixins/components/nav/tpl.pug
+
+footer.footer
+  .container
+    +nav({
+      cls: "nav--footer",
+      items: [
+        {
+          link: "#about",
+          text: "О нас"
+        },
+        {
+          link: "#online-training",
+          text: "Онлайн тренировки"
+        },
+        {
+          link: "#vacancies",
+          text: "Вакансии"
+        },
+        {
+          link: "#reviews",
+          text: "Отзывы"
+        },
+        {
+          link: "#callback",
+          text: "Нужна помощь?"
+        }
+      ]
+    })
+    
+    a(href="/").logo
+      img(src="./assets/img/logo.svg" alt="logo")
+
+    +company-info({
+      heading: "© 2025, Академия Водных Искусств",
+      content:[
+        "Все права защищены",
+        "ИНН 544545454",
+        "ОГРН/ОГРНИП 54454542453453534"
+      ]
+    })
+
+    +social({
+      items: [
+        {
+          link: "#",
+          icon: "./assets/img/tg-filled-icon.png",
+          alt: "telegram"
+        },
+        {
+          link: "#",
+          icon: "./assets/img/whatsapp-filled-icon.png",
+          alt: "whatsapp"
+        },
+        {
+          link: "#",
+          icon: "./assets/img/mail-filled-icon.png",
+          alt: "E-mail"
+        }
+      ]
+    })
+
+    +link({
+      href: "tel:88002006655",
+      text: "8 (800) 200 66 55",
+      cls: "link--bolder"
+    })
+
+    +mainBtn({
+      text: "Обратный звонок",
+    })
+
+    +link({
+      href: "#",
+      text: "Политика обработки персональных данных",
+      cls: "link--underlined link--size-xs"
+    })
+
+    +link({
+      href: "#",
+      text: "Политика конфиденциальности",
+      cls: "link--underlined link--size-xs"
+    })
+
+    
+
+
+            

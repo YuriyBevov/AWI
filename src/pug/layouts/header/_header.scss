@@ -1,0 +1,31 @@
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 99;
+	padding-bottom: 20px;
+	background-color: var(--white-color);
+
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding: 20px 0;
+
+		& > a.link {
+			padding-top: 3px;
+		}
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-grow: 1;
+
+		img {
+			width: 100%;
+			max-width: 140px;
+			object-fit: contain;
+		}
+	}
+}

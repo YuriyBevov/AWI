@@ -11,8 +11,8 @@
 		);
 
 		background-size: cover;
-		padding-top: clamp(10px, 5vw, 40px);
-		padding-bottom: clamp(10px, 5vw, 40px);
+		padding-top: var(--container-offset);
+		padding-bottom: var(--container-offset);
 		max-width: calc(var(--container-width) - (clamp(20px, 5vw, 40px) * 2));
 	}
 

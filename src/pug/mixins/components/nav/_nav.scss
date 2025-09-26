@@ -1,0 +1,36 @@
+@use "@styles/extends/_hover-opacity";
+.nav {
+	&__list {
+		margin: 0;
+		padding: 8px 0;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		gap: 16px;
+		border-bottom: 1px solid var(--gray-color);
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+			font-weight: 600;
+			text-align: center;
+			padding: 6px;
+			text-decoration: none;
+			color: var(--primary-color);
+			transition: color var(--main-transition);
+
+			@media (hover: hover) {
+				&:hover {
+					color: var(--primary-light-color);
+				}
+			}
+
+			&:focus {
+				color: var(--primary-light-color);
+			}
+		}
+	}
+}
