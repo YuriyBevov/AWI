@@ -1,2 +1,77 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+
 .footer {
+	position: relative;
+	margin: 100px 0;
+	container: footer / inline-size;
+
+	&::after {
+		position: absolute;
+		left: 0;
+		content: "";
+		width: 100%;
+		height: 100px;
+		bottom: -100px;
+		background-image: url("@assets/img/section-top-layer.svg");
+	}
+
+	&__section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 16px 0;
+		gap: 20px clamp(32px, 3.2vw, 64px);
+
+		&--bottom {
+			padding: 24px 0;
+		}
+
+		@include container-up("footer", 960px) {
+			flex-direction: row;
+		}
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		column-gap: clamp(16px, 2.4vw, 20px);
+		row-gap: 10px;
+
+		@include container-up("footer", 960px) {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
+	.company-info {
+		text-align: center;
+	}
+
+	.social {
+		order: 2;
+	}
+
+	.nav--footer {
+		display: none;
+	}
+
+	@include container-up("footer", 960px) {
+		.nav--footer {
+			display: flex;
+		}
+		.logo {
+			margin-right: auto;
+		}
+
+		.social {
+			order: revert;
+		}
+
+		.company-info {
+			margin-right: auto;
+			text-align: revert;
+		}
+	}
 }

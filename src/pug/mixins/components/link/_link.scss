@@ -1,6 +1,7 @@
 @use "@styles/extends/_hover-opacity";
 .link {
 	font-size: clamp(16px, 2vw, 18px);
+	text-align: center;
 	color: var(--primary-color);
 
 	@extend %hover-opacity;

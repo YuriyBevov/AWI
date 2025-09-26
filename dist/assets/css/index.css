@@ -85,16 +85,16 @@
   font-display: swap;
   font-style: normal;
 }
-.link, .social ul a, .btn--outlined, .logo {
+.developer-line a, .link, .social ul a, .btn--outlined, .logo {
   transition: opacity 0.3s ease-in-out;
   opacity: 1;
 }
 @media (hover: hover) {
-  .link:hover, .social ul a:hover, .btn--outlined:hover, .logo:hover {
+  .developer-line a:hover, .link:hover, .social ul a:hover, .btn--outlined:hover, .logo:hover {
     opacity: 0.6;
   }
 }
-.link:focus, .social ul a:focus, .btn--outlined:focus, .logo:focus {
+.developer-line a:focus, .link:focus, .social ul a:focus, .btn--outlined:focus, .logo:focus {
   opacity: 0.6;
 }
 
@@ -271,6 +271,9 @@ img {
   }
 }
 
+.nav {
+  width: 100%;
+}
 .nav__list {
   margin: 0;
   padding: 8px 0;
@@ -810,6 +813,7 @@ img {
 }
 .link {
   font-size: clamp(16px, 2vw, 18px);
+  text-align: center;
   color: var(--primary-color);
 }
 .link--bolder {
@@ -834,6 +838,29 @@ img {
 }
 .company-info .heading {
   font-weight: 600;
+}
+
+.developer-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+.developer-line a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.developer-line a span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.developer-line a img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
 }
 
 .staff .base-slider .swiper-slide {
@@ -905,6 +932,73 @@ img {
 .affiliate picture,
 .affiliate iframe {
   border-radius: 30px;
+}
+
+.footer {
+  position: relative;
+  margin: 100px 0;
+  container: footer/inline-size;
+}
+.footer::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100px;
+  bottom: -100px;
+  background-image: url("data:image/svg+xml,%3csvg%20width='1920'%20height='100'%20viewBox='0%200%201920%20100'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_170_676)'%3e%3cpath%20d='M1921%20133V18.52C1823.98%2020.1061%201726.95%2021.6922%201615.51%2016.2304C1504.07%2010.7687%201378.2%20-1.74098%201255.32%200.203226C1132.44%202.14743%201012.53%2018.5455%20924.481%2022.336C836.435%2026.1266%20780.252%2017.3097%20679.02%2018.52C577.788%2019.7304%20431.507%2030.968%20310.828%2032.6392C190.15%2034.3104%2095.0752%2026.4152%200%2018.52V133H1921Z'%20fill='%230297DF'%20fill-opacity='0.05'/%3e%3cpath%20d='M1921%20133V69.9225C1826.5%2060.1214%201732.01%2050.3204%201626.18%2051.0371C1520.35%2051.7537%201403.2%2062.9882%201302.01%2069.9225C1200.82%2076.8569%201115.6%2079.4912%201004.52%2073.6996C893.443%2067.9081%20756.503%2053.6907%20629.661%2054.8141C502.819%2055.9376%20386.074%2072.4018%20282.814%2077.4767C179.553%2082.5516%2089.7766%2076.2371%20-0.00012207%2069.9225V133H1921Z'%20fill='%230297DF'%20fill-opacity='0.05'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_170_676'%3e%3crect%20width='1920'%20height='100'%20fill='white'%20transform='matrix(-1%200%200%201%201920%200)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
+}
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  gap: 20px clamp(32px, 3.2vw, 64px);
+}
+.footer__section--bottom {
+  padding: 24px 0;
+}
+@container footer (min-width: 960px ) {
+  .footer__section {
+    flex-direction: row;
+  }
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: clamp(16px, 2.4vw, 20px);
+  row-gap: 10px;
+}
+@container footer (min-width: 960px ) {
+  .footer__links {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.footer .company-info {
+  text-align: center;
+}
+.footer .social {
+  order: 2;
+}
+.footer .nav--footer {
+  display: none;
+}
+@container footer (min-width: 960px ) {
+  .footer .nav--footer {
+    display: flex;
+  }
+  .footer .logo {
+    margin-right: auto;
+  }
+  .footer .social {
+    order: revert;
+  }
+  .footer .company-info {
+    margin-right: auto;
+    text-align: revert;
+  }
 }/**
  * Swiper 12.0.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
