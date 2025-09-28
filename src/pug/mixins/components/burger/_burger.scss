@@ -1,0 +1,65 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+
+@property --btn-gradient-start {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #014fa2;
+}
+
+@property --btn-gradient-end {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #0198df;
+}
+
+.burger {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 50px;
+	min-width: 50px;
+	height: 50px;
+	aspect-ratio: 1/1;
+	padding: 12px;
+	border-radius: 20px;
+	border: none;
+	z-index: 99;
+
+	background: linear-gradient(
+		90deg,
+		var(--btn-gradient-start),
+		var(--btn-gradient-end)
+	);
+
+	transition: --btn-gradient-start 1s, --btn-gradient-end 1s,
+		opacity var(--main-transition);
+
+	@media (hover: hover) {
+		&:hover {
+			--btn-gradient-start: #0198df;
+			--btn-gradient-end: #014fa2;
+		}
+	}
+
+	&:focus {
+		--btn-gradient-start: #0198df;
+		--btn-gradient-end: #014fa2;
+	}
+
+	&-line {
+		width: 100%;
+		height: 2px;
+		background-color: var(--white-color);
+		border-radius: 2px;
+		margin: 3px;
+		transform-origin: center;
+	}
+
+	@include container-up("header", $desktop-view-width) {
+		display: none;
+	}
+}

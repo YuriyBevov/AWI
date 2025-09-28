@@ -4,6 +4,7 @@ include ../../mixins/components/link/tpl.pug
 include ../../mixins/components/company-info/tpl.pug
 include ../../mixins/components/nav/tpl.pug
 
+
 header.header
   .container
     .header__top
@@ -47,10 +48,13 @@ header.header
       +mainBtn({
         text: "Обратный звонок",
       })
+
+      include ../../mixins/components/burger/tpl.pug
     
     .header__bottom
       +nav({
-        cls: "nav--footer",
+        type: 'main-menu',
+        cls: "nav--header",
         items: [
           {
             link: "#about",

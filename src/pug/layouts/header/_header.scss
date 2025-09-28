@@ -1,9 +1,13 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+
 .header {
 	position: sticky;
 	top: 0;
 	z-index: 99;
 	padding-bottom: 20px;
 	background-color: var(--white-color);
+	container: header / inline-size;
 
 	&__top {
 		display: flex;
@@ -14,13 +18,50 @@
 		& > a.link {
 			padding-top: 3px;
 		}
+
+		.btn--anchor,
+		.social,
+		.link,
+		.btn {
+			display: none;
+		}
+
+		@include container-up("header", 475px) {
+			.social {
+				display: flex;
+			}
+		}
+
+		@include container-up("header", $mobile-width) {
+			.link {
+				display: flex;
+			}
+		}
+
+		@include container-up("header", 720px) {
+			.btn--anchor {
+				display: flex;
+			}
+		}
+
+		@include container-up("header", $tablet-lg-width) {
+			.btn {
+				display: flex;
+			}
+		}
 	}
 
 	.logo {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex-grow: 1;
+		margin-right: auto;
+		margin-top: 5px;
+
+		@include container-up("header", 720px) {
+			margin-right: revert;
+			flex-grow: 1;
+		}
 
 		img {
 			width: 100%;

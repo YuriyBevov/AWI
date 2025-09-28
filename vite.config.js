@@ -82,6 +82,7 @@ export default defineConfig({
 			"@styles": resolve(__dirname, "./src/styles"),
 			"@pug": resolve(__dirname, "./src/pug"),
 			"@img": resolve(__dirname, "./src/assets/img"),
+			"@js": resolve(__dirname, "./src/js"),
 		},
 	},
 });

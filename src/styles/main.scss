@@ -16,6 +16,8 @@
 @use "@pug/layouts/section/_section.scss";
 
 // Mixins and components
+
+@use "@pug/mixins/components/burger/_burger.scss";
 @use "@pug/mixins/components/nav/_nav.scss";
 @use "@pug/mixins/components/label/_label.scss";
 @use "@pug/mixins/components/features-row/_features-row.scss";
