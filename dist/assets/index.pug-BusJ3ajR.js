@@ -8870,35 +8870,6 @@ window.addEventListener("load", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
-const bodyLocker = (isLocked) => {
-  const body = document.querySelector("body");
-  if (body.dataset.locked === isLocked.toString()) {
-    return;
-  }
-  if (isLocked) {
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    const scrollY = window.scrollY;
-    body.style.overflow = "hidden";
-    if (scrollbarWidth > 0) {
-      body.style.paddingRight = `${scrollbarWidth}px`;
-    }
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.width = "100%";
-    body.dataset.scrollY = scrollY.toString();
-    body.dataset.locked = "true";
-  } else {
-    body.style.overflow = "";
-    body.style.paddingRight = "";
-    body.style.position = "";
-    body.style.top = "";
-    body.style.width = "";
-    const scrollY = parseInt(body.dataset.scrollY || "0", 10);
-    window.scrollTo(0, scrollY);
-    delete body.dataset.scrollY;
-    body.dataset.locked = "false";
-  }
-};
 const focusableElements = [
   "a[href]",
   "input",
@@ -8990,6 +8961,18 @@ if (burger) {
     burgerAnimation();
     openNavMenuHandler();
   };
+  const onClickNavLink = (evt) => {
+    const link = evt.target.closest('a[href^="#"]');
+    if (!link) return;
+    if (!link.closest(".nav__wrapper")) return;
+    const href = link.getAttribute("href");
+    const target = document.querySelector(href);
+    if (target) {
+      isActive = false;
+      burgerAnimation();
+      openNavMenuHandler();
+    }
+  };
   const onKeyDown = (event) => {
     if (event.key === "Escape" || event.key === "Esc" || event.keyCode === 27) {
       isActive = false;
@@ -8999,10 +8982,12 @@ if (burger) {
   };
   const addEventListeners = () => {
     navMenu.addEventListener("click", onClickCloseMenu);
+    navMenuWrapper.addEventListener("click", onClickNavLink);
     document.addEventListener("keydown", onKeyDown);
   };
   const removeEventListeners = () => {
     navMenu.removeEventListener("click", onClickCloseMenu);
+    navMenuWrapper.removeEventListener("click", onClickNavLink);
     document.removeEventListener("keydown", onKeyDown);
   };
   const navMenuAnimation = gsapWithCSS.fromTo(
@@ -9010,12 +8995,14 @@ if (burger) {
     {
       backgroundColor: "tansparent",
       backdropFilter: "blur(3px)",
-      alpha: 0
+      alpha: 0,
+      visibility: "hidden"
     },
     {
       backgroundColor: "rgba(0, 53, 107, 0.4)",
       backdropFilter: "blur(3px)",
       alpha: 1,
+      visibility: "visible",
       duration: 0.7,
       ease: "ease-in",
       paused: true
@@ -9049,15 +9036,12 @@ if (burger) {
       navMenuWrapperAnimation.reverse();
     }
   };
-  const onClickOpenMenu = () => {
+  const onClickOpenMenu = (evt) => {
     isActive = !isActive;
     burgerAnimation();
     openNavMenuHandler();
     if (isActive) {
-      bodyLocker(true);
       focusTrap(navMenu, 1);
-    } else {
-      bodyLocker(false);
     }
   };
   burger.addEventListener("click", onClickOpenMenu);

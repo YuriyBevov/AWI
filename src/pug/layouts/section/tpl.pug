@@ -7,11 +7,12 @@ block variables
   - hideSectionHeader = ''
   - sectionBtn = {}
   - sectionHeaderSide = ''
+  - sectionID = ''
 
 include ../../mixins/components/label/tpl.pug
 include ../../mixins/components/main-btn/tpl.pug
 
-section.section(class= sectionClass)
+section.section(class= sectionClass id= sectionID)
   .container(class= sectionContainerClass)
 
     if hideSectionHeader != true

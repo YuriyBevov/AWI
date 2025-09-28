@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
-import { bodyLocker } from "@js/utils/bodyLocker";
+// import { bodyLocker } from "@js/utils/bodyLocker";
 import { focusTrap } from "@js/utils/focusTrap";
+// import { smoothScroll } from "@js/utils/smoothScroll";
 
 const burger = document.querySelector(".burger");
 
@@ -63,6 +64,26 @@ if (burger) {
 		openNavMenuHandler();
 	};
 
+	// Обработчик для якорных ссылок в мобильном меню
+	const onClickNavLink = (evt) => {
+		const link = evt.target.closest('a[href^="#"]');
+		if (!link) return;
+
+		// Проверяем, что ссылка находится внутри nav__wrapper (активная часть меню)
+		if (!link.closest(".nav__wrapper")) return;
+
+		const href = link.getAttribute("href");
+		const target = document.querySelector(href);
+
+		if (target) {
+			// Закрываем меню
+			isActive = false;
+			burgerAnimation();
+			openNavMenuHandler();
+			// bodyLocker(false);
+		}
+	};
+
 	const onKeyDown = (event) => {
 		if (event.key === "Escape" || event.key === "Esc" || event.keyCode === 27) {
 			isActive = false;
@@ -73,11 +94,13 @@ if (burger) {
 
 	const addEventListeners = () => {
 		navMenu.addEventListener("click", onClickCloseMenu);
+		navMenuWrapper.addEventListener("click", onClickNavLink);
 		document.addEventListener("keydown", onKeyDown);
 	};
 
 	const removeEventListeners = () => {
 		navMenu.removeEventListener("click", onClickCloseMenu);
+		navMenuWrapper.removeEventListener("click", onClickNavLink);
 		document.removeEventListener("keydown", onKeyDown);
 	};
 
@@ -87,11 +110,13 @@ if (burger) {
 			backgroundColor: "tansparent",
 			backdropFilter: "blur(3px)",
 			alpha: 0,
+			visibility: "hidden",
 		},
 		{
 			backgroundColor: "rgba(0, 53, 107, 0.4)",
 			backdropFilter: "blur(3px)",
 			alpha: 1,
+			visibility: "visible",
 			duration: 0.7,
 			ease: "ease-in",
 			paused: true,
@@ -128,18 +153,20 @@ if (burger) {
 		}
 	};
 
-	const onClickOpenMenu = () => {
+	const onClickOpenMenu = (evt) => {
 		isActive = !isActive;
 
 		burgerAnimation();
 		openNavMenuHandler();
 
 		if (isActive) {
-			bodyLocker(true);
+			// bodyLocker(true);
 			focusTrap(navMenu, 1);
-		} else {
-			bodyLocker(false);
 		}
+
+		// else {
+		// 	bodyLocker(false);
+		// }
 	};
 
 	burger.addEventListener("click", onClickOpenMenu);

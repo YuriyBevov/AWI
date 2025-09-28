@@ -97,3 +97,16 @@ img {
 .logo {
 	@extend %hover-opacity;
 }
+
+// Отступ для якорных ссылок с учетом sticky header
+.section {
+	scroll-margin-top: calc(
+		var(--header-height, 200px) + 40px
+	); // Динамическая высота header + отступ
+
+	@media (max-width: 960px) {
+		scroll-margin-top: calc(
+			var(--header-height, 80px) + 40px
+		); // Меньший отступ для мобильных
+	}
+}

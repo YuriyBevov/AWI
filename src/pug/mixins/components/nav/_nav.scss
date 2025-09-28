@@ -61,7 +61,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			width: 100%;
+			width: 90vw;
 			height: 100%;
 			padding: 0 20px;
 			max-width: 420px;
@@ -120,6 +120,7 @@
 
 			opacity: 1 !important;
 			backdrop-filter: none !important;
+			visibility: visible !important;
 			background-color: transparent !important;
 
 			.nav__wrapper,

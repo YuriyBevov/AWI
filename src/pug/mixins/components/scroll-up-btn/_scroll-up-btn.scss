@@ -1,17 +1,18 @@
 .scroll-up-btn {
 	position: fixed;
-	bottom: 60px;
-	left: 40px;
+	bottom: 30px;
+	right: var(--container-offset);
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 48px;
-	height: 48px;
+	width: 50px;
+	height: 50px;
+	border-radius: 20px;
 
 	padding: 6px;
 	border: 2px solid var(--light-color);
-	border-radius: 50%;
+	// border-radius: 50%;
 	background: var(--blue-gradient-color);
 	z-index: 31;
 	transition: opacity var(--main-transition);
