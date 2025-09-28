@@ -1,0 +1,134 @@
+// @forward "@styles/_extends/flexbox.scss";
+// @forward "@styles/_extends/effects.scss";
+// @forward "@styles/_extends/resets.scss";
+
+@property --btn-gradient-start {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #014fa2;
+}
+
+@property --btn-gradient-end {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #0198df;
+}
+
+.modal-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 199;
+	backdrop-filter: blur(3px);
+	background-color: rgba(0, 53, 107, 0.4);
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90dvw;
+	height: fit-content;
+	max-width: 640px;
+	max-height: 85dvh;
+	padding: 30px;
+	padding-left: 0;
+
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		border-radius: 4px;
+		background-color: var(--white-color);
+		overflow: hidden;
+		padding: 24px;
+		border-radius: 20px;
+	}
+
+	&-content {
+		max-height: 440px;
+		overflow: hidden;
+		overflow-y: auto;
+		padding-right: 10px;
+
+		&::-webkit-scrollbar {
+			background-color: var(--gray-color);
+			width: 4px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--secondary-color);
+		}
+	}
+
+	&-header {
+		display: grid;
+		grid-template-columns: auto 40px;
+		gap: 16px 24px;
+		background-color: var(--white);
+		border-bottom: 2px solid var(--primary);
+
+		.title {
+			display: inline-block;
+			font-size: clamp(24px, 3.2vw, 40px);
+			line-height: 1.2;
+			width: 100%;
+			color: var(--primary-color);
+			padding-right: 20px;
+			min-height: 50px;
+		}
+
+		.text {
+			grid-column: -1/1;
+			width: 100%;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 1.2;
+		}
+	}
+
+	&-closer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		min-width: 40px;
+		height: 40px;
+		aspect-ratio: 1/1;
+		padding: 4px;
+		border-radius: 20px;
+		border: none;
+
+		background: linear-gradient(
+			90deg,
+			var(--btn-gradient-start),
+			var(--btn-gradient-end)
+		);
+
+		transition: --btn-gradient-start 1s, --btn-gradient-end 1s,
+			opacity var(--main-transition);
+
+		@media (hover: hover) {
+			&:hover {
+				--btn-gradient-start: #0198df;
+				--btn-gradient-end: #014fa2;
+			}
+		}
+
+		&:focus {
+			--btn-gradient-start: #0198df;
+			--btn-gradient-end: #014fa2;
+		}
+
+		svg {
+			width: 32px;
+			height: 32px;
+			stroke: var(--white-color);
+			stroke-width: 2px;
+		}
+	}
+}

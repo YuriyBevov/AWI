@@ -14,6 +14,7 @@
 // Layouts
 @use "@pug/layouts/header/_header.scss";
 @use "@pug/layouts/section/_section.scss";
+@use "@pug/layouts/modals/_modal.scss";
 
 // Mixins and components
 
@@ -34,6 +35,7 @@
 @use "@pug/mixins/components/company-info/_company-info.scss";
 @use "@pug/mixins/components/developer/_developer.scss";
 @use "@pug/mixins/components/scroll-up-btn/_scroll-up-btn.scss";
+@use "@pug/mixins/components/modals/staff-preview-modal/_staff-preview-modal.scss";
 
 // Sections
 @use "@pug/sections/staff/_staff.scss";

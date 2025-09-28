@@ -1,7 +1,3 @@
-
-include ../label/tpl.pug
-include ../main-btn/tpl.pug
-
 mixin staff-preview-card(data)
   .staff-preview-card-container
     .staff-preview-card(class= data.cls ? data.cls : null)
@@ -16,5 +12,13 @@ mixin staff-preview-card(data)
         span.subtitle= data.position
         p.text= data.text
         +mainBtn({
-          isIconed: true
+          isIconed: true,
+          modalID: 'staff-preview-modal'
         })
+    
+    template(id='staff-preview-modal-tpl' data-title= data.name)
+      span.subtitle= data.position
+      if data.detailText
+        != data.detailText
+
+  

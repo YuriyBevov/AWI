@@ -1,7 +1,5 @@
 import { gsap } from "gsap";
-// import { bodyLocker } from "@js/utils/bodyLocker";
 import { focusTrap } from "@js/utils/focusTrap";
-// import { smoothScroll } from "@js/utils/smoothScroll";
 
 const burger = document.querySelector(".burger");
 
@@ -80,7 +78,6 @@ if (burger) {
 			isActive = false;
 			burgerAnimation();
 			openNavMenuHandler();
-			// bodyLocker(false);
 		}
 	};
 
@@ -160,13 +157,8 @@ if (burger) {
 		openNavMenuHandler();
 
 		if (isActive) {
-			// bodyLocker(true);
 			focusTrap(navMenu, 1);
 		}
-
-		// else {
-		// 	bodyLocker(false);
-		// }
 	};
 
 	burger.addEventListener("click", onClickOpenMenu);

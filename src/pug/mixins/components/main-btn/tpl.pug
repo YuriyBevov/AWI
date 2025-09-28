@@ -1,5 +1,5 @@
 mixin mainBtn(data)
-	#{data.tag || 'button'}.btn(href=data.href ? data.href : null class= data.cls ? data.cls : null)
+	#{data.tag || 'button'}.btn(href=data.href ? data.href : null class= data.cls ? data.cls : null data-modal-opener= data.modalID ? data.modalID : null)
 		span!= data.text ? data.text : 'Подробнее'
 
 		if data.isIconed

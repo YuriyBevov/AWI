@@ -1,3 +1,6 @@
+var __defProp = Object.defineProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -9046,3 +9049,191 @@ if (burger) {
   };
   burger.addEventListener("click", onClickOpenMenu);
 }
+class Modal {
+  constructor(modal, options = {}) {
+    __publicField(this, "bodyLocker", (bool) => {
+      const body = document.querySelector("body");
+      if (bool) {
+        body.style.overflow = "hidden";
+      } else {
+        body.style.overflow = "auto";
+      }
+    });
+    __publicField(this, "focusTrap", () => {
+      const firstFocusableElement = this.modal.querySelectorAll(
+        this.focusableElements
+      )[0];
+      const focusableContent = this.modal.querySelectorAll(
+        this.focusableElements
+      );
+      const lastFocusableElement = focusableContent[focusableContent.length - 1];
+      if (focusableContent.length) {
+        const onBtnClickHandler = (evt) => {
+          const isTabPressed = evt.key === "Tab" || evt.key === 9;
+          if (evt.key === "Escape") {
+            document.removeEventListener("keydown", onBtnClickHandler);
+          }
+          if (!isTabPressed) {
+            return;
+          }
+          if (evt.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              evt.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              evt.preventDefault();
+            }
+          }
+        };
+        document.addEventListener("keydown", onBtnClickHandler);
+        firstFocusableElement.focus();
+      }
+    });
+    __publicField(this, "addListeners", () => {
+      if (this.openers) {
+        this.openers.forEach((opener) => {
+          opener.removeEventListener("click", this.openModal);
+        });
+      }
+      document.addEventListener("click", this.closeByOverlayClick);
+      document.addEventListener("keydown", this.closeByEscBtn);
+      if (this.close) {
+        this.close.addEventListener("click", this.closeByBtnClick);
+      }
+    });
+    __publicField(this, "refresh", () => {
+      document.removeEventListener("click", this.closeByOverlayClick);
+      document.removeEventListener("keydown", this.closeByEscBtn);
+      if (this.close) {
+        this.close.removeEventListener("click", this.closeByBtnClick);
+      }
+      gsapWithCSS.fromTo(
+        this.overlay,
+        { display: "flex" },
+        {
+          opacity: 0,
+          display: "none",
+          duration: 0.6,
+          ease: "ease-in",
+          onComplete: () => {
+            this.modal.querySelectorAll("form").forEach((f) => f.reset());
+          }
+        }
+      );
+      !this.preventBodyLock ? this.bodyLocker(false) : null;
+      this.preventBodyLock = false;
+      if (this.openers) {
+        this.openers.forEach((opener) => {
+          opener.addEventListener("click", this.openModal);
+        });
+      }
+    });
+    __publicField(this, "closeByOverlayClick", (evt) => {
+      if (evt.target === this.overlay) {
+        this.refresh();
+      }
+    });
+    __publicField(this, "closeByEscBtn", (evt) => {
+      if (evt.key === "Escape") {
+        this.refresh();
+      }
+    });
+    __publicField(this, "closeByBtnClick", () => {
+      this.refresh();
+    });
+    __publicField(this, "openModal", (evt) => {
+      evt.preventDefault();
+      this.bodyLocker(true);
+      gsapWithCSS.fromTo(
+        this.overlay,
+        { display: "none", opacity: 0 },
+        {
+          display: "flex",
+          opacity: 1,
+          duration: 0.6,
+          ease: "ease-in",
+          onComplete: () => {
+            this.addListeners();
+            this.focusTrap();
+          }
+        }
+      );
+    });
+    __publicField(this, "show", () => {
+      this.bodyLocker(true);
+      gsapWithCSS.fromTo(
+        this.overlay,
+        { display: "none", opacity: 0 },
+        {
+          display: "flex",
+          opacity: 1,
+          duration: 0.6,
+          ease: "ease-in",
+          onComplete: () => {
+            this.addListeners();
+            this.focusTrap();
+          }
+        }
+      );
+    });
+    this.preventBodyLock = options.preventBodyLock ? true : false;
+    this.modal = modal;
+    this.overlay = this.modal.parentNode;
+    this.close = this.modal.querySelector(".modal-closer");
+    this.id = this.modal.getAttribute("id");
+    this.openers = document.querySelectorAll(
+      '[data-modal-opener="' + this.id + '"]'
+    );
+    this.isInited = false;
+    this.focusableElements = [
+      "a[href]",
+      "input",
+      "select",
+      "textarea",
+      "button",
+      "iframe",
+      "[contenteditable]",
+      '[tabindex]:not([tabindex^="-"])'
+    ];
+    this.init();
+  }
+  init() {
+    if (this.openers) {
+      this.isInited = true;
+      this.openers.forEach((opener) => {
+        opener.addEventListener("click", this.openModal);
+      });
+    } else {
+      console.error(
+        "Не добавлена кнопка открытия модального окна, либо в ней не прописан аттр-т: data-modal-opener={modal-id} "
+      );
+    }
+  }
+}
+const modals = document.querySelectorAll(".modal");
+if (modals) {
+  modals.forEach((modal) => {
+    new Modal(modal);
+  });
+}
+document.addEventListener("click", function(evt) {
+  const opener = evt.target.closest(
+    '[data-modal-opener="staff-preview-modal"]'
+  );
+  if (!opener) return;
+  const card = opener.closest(".staff-preview-card");
+  const container = card.parentElement;
+  const template = container.querySelector("template#staff-preview-modal-tpl");
+  const modalContent = template.content.cloneNode(true);
+  const modal = document.getElementById("staff-preview-modal");
+  const modalContentContainer = modal.querySelector(".modal-content");
+  const modalHeaderTitle = modal.querySelector(".modal-header span.title");
+  if (modalHeaderTitle && template.hasAttribute("data-title")) {
+    modalHeaderTitle.textContent = template.getAttribute("data-title");
+  }
+  modalContentContainer.innerHTML = "";
+  modalContentContainer.appendChild(modalContent);
+});

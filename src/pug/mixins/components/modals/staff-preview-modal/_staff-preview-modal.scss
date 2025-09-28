@@ -1,0 +1,12 @@
+.staff-preview-modal {
+	.modal-content {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		& > * {
+			margin: 0;
+			font-weight: 500;
+		}
+	}
+}
