@@ -9123,8 +9123,9 @@ class Modal {
           }
         }
       );
-      !this.preventBodyLock ? this.bodyLocker(false) : null;
-      this.preventBodyLock = false;
+      if (!this.preventBodyLock) {
+        this.bodyLocker(false);
+      }
       if (this.openers) {
         this.openers.forEach((opener) => {
           opener.addEventListener("click", this.openModal);
@@ -9146,30 +9147,51 @@ class Modal {
     });
     __publicField(this, "openModal", (evt) => {
       evt.preventDefault();
-      this.bodyLocker(true);
+      if (!this.preventBodyLock) {
+        this.bodyLocker(false);
+      }
+      gsapWithCSS.set(this.modal, { alpha: 0, y: 150, x: "-50%" });
       gsapWithCSS.fromTo(
         this.overlay,
-        { display: "none", opacity: 0 },
+        { display: "none", alpha: 0 },
         {
           display: "flex",
-          opacity: 1,
+          alpha: 1,
           duration: 0.6,
           ease: "ease-in",
           onComplete: () => {
             this.addListeners();
             this.focusTrap();
+            gsapWithCSS.fromTo(
+              this.modal,
+              {
+                alpha: 0,
+                y: 150,
+                x: "-50%"
+              },
+              {
+                alpha: 1,
+                y: "-50%",
+                x: "-50%",
+                duration: 1,
+                ease: "ease-in"
+              },
+              "-=0.3"
+            );
           }
         }
       );
     });
     __publicField(this, "show", () => {
-      this.bodyLocker(true);
+      if (!this.preventBodyLock) {
+        this.bodyLocker(true);
+      }
       gsapWithCSS.fromTo(
         this.overlay,
-        { display: "none", opacity: 0 },
+        { display: "none", alpha: 0 },
         {
           display: "flex",
-          opacity: 1,
+          alpha: 1,
           duration: 0.6,
           ease: "ease-in",
           onComplete: () => {
@@ -9216,7 +9238,7 @@ class Modal {
 const modals = document.querySelectorAll(".modal");
 if (modals) {
   modals.forEach((modal) => {
-    new Modal(modal);
+    new Modal(modal, { preventBodyLock: true });
   });
 }
 document.addEventListener("click", function(evt) {

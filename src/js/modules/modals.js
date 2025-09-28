@@ -2,9 +2,8 @@ import { Modal } from "../classes/Modal";
 
 const modals = document.querySelectorAll(".modal");
 
-
 if (modals) {
-  modals.forEach((modal) => {
-    new Modal(modal);
-  });
+	modals.forEach((modal) => {
+		new Modal(modal, { preventBodyLock: true });
+	});
 }
