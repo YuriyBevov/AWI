@@ -1,0 +1,6 @@
+include ../info-card/tpl.pug
+
+mixin features-row(data)
+  .features-row
+    each feature in data.items
+      +info-card(feature)

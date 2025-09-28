@@ -5,6 +5,7 @@
 		position: relative;
 		margin: 100px 0;
 		background-color: var(--light-color);
+
 		&::before,
 		&::after {
 			position: absolute;
@@ -40,6 +41,20 @@
 		@include container-up("main", $mobile-width) {
 			align-items: revert;
 			text-align: revert;
+		}
+
+		&-side {
+			&-container {
+				container: section-header-side-container / inline-size;
+			}
+			display: flex;
+			flex-direction: column;
+			gap: clamp(16px, 3vw, 24px);
+			margin-bottom: clamp(20px, 3vw, 32px);
+
+			@include container-up("section-header-side-container", 475px) {
+				flex-direction: row;
+			}
 		}
 	}
 }

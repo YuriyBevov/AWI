@@ -11,14 +11,15 @@
 	},
 	"devDependencies": {
 		"@vituum/vite-plugin-pug": "^1.1.0",
+		"cli-progress": "^3.12.0",
+		"glob": "^11.0.0",
+		"gsap": "^3.13.0",
 		"sass": "^1.69.0",
+		"sharp": "^0.33.5",
 		"vite": "^5.0.0",
 		"vite-plugin-inspect": "^0.8.0",
 		"vite-plugin-svg-spritemap": "^1.0.13",
-		"vituum": "^1.2.0",
-		"sharp": "^0.33.5",
-		"glob": "^11.0.0",
-		"cli-progress": "^3.12.0"
+		"vituum": "^1.2.0"
 	},
 	"dependencies": {
 		"swiper": "^12.0.2"

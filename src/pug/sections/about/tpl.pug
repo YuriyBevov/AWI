@@ -6,11 +6,11 @@ block variables
   - sectionLabel = { text: 'О нас', class: 'label--bordered label--dotted' }
   - sectionTitle = 'Академия водных искусств'
   - sectionText = '<p>— объединяет профессионалов и любителей, обеспечивая идеальные условия для обучения и развития в области синхронного плавания, плавания других водных активностей.</p><p>В нашей академии вы сможете не только освоить технику плавания, но и открывать для себя мир спортивных достижений.</p>'
+  - sectionHeaderSide = true
 
 block content
-  .content
-    p content
-    include ../../mixins/components/main-btn/tpl.pug
-    +mainBtn({
-      isIconed: true,
-    })
+  .img-grid-container
+    .img-grid
+      img(src="./assets/img/about-img-1.png" alt="О нас фото 1" width="560" height="280")
+      img(src="./assets/img/about-img-2.png" alt="О нас фото 2" width="560" height="280")
+

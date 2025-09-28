@@ -1,0 +1,25 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+
+.features-row {
+	display: flex;
+	flex-direction: column;
+
+	gap: 20px;
+
+	.info-card {
+		max-width: 100%;
+	}
+
+	@include container-up("main", 475px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.info-card {
+			max-width: 300px;
+			min-width: 210px;
+			flex: 1 1 18%;
+		}
+	}
+}

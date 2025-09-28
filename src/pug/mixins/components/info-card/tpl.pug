@@ -1,0 +1,11 @@
+mixin info-card(data)
+  .info-card
+    .info-card__head
+      if data.icon
+        img(src=`./assets/img/${data.icon}` alt= data.title width="24" height="24")
+      if data.strong
+        strong.title!= data.strong
+    
+    if data.title
+      span.subtitle!= data.title
+    span.text!= data.text

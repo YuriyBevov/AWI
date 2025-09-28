@@ -6,6 +6,7 @@ block variables
   - sectionText  = ''
   - hideSectionHeader = ''
   - sectionBtn = {}
+  - sectionHeaderSide = ''
 
 include ../../mixins/components/label/tpl.pug
 include ../../mixins/components/main-btn/tpl.pug
@@ -29,6 +30,20 @@ section.section(class= sectionClass)
           +mainBtn({
             text: sectionBtn.text
           })
+      
+      if sectionHeaderSide
+        .section__header-side-container
+          .section__header-side
+            include ../../mixins/components/info-card/tpl.pug
+            +info-card({
+              strong: '15+',
+              text: 'лет опыта обучения различным водным искусствам.'
+            })
+            +info-card({
+              strong: '100+',
+              text: 'лет опыта обучения различным водным искусствам.'
+            })
     block content
 
 - hideSectionHeader = ''
+- sectionHeaderSide = ''

@@ -5,9 +5,10 @@ include ../main-btn/tpl.pug
 mixin staff-preview-card(data)
   .staff-preview-card-container
     .staff-preview-card(class= data.cls ? data.cls : null)
-      img(src= data.image alt= data.name width="360" height="540")
-      .staff-preview-card__content
+      .staff-preview-card__header
+        img(src= data.image alt= data.name width="360" height="540")
         span.title= data.name    
+      .staff-preview-card__content
         +label({
           text: data.label,
           cls: 'label--bordered'
