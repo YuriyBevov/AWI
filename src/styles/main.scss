@@ -37,6 +37,9 @@
 @use "@pug/mixins/components/scroll-up-btn/_scroll-up-btn.scss";
 @use "@pug/mixins/components/modals/staff-preview-modal/_staff-preview-modal.scss";
 @use "@pug/mixins/components/modals/affiliate-modal/_affiliate-modal.scss";
+@use "@pug/mixins/components/form-controls/checkbox/_checkbox.scss";
+@use "@pug/mixins/components/form-controls/textarea/_textarea.scss";
+@use "@pug/mixins/components/form-controls/input/_input.scss";
 
 // Sections
 @use "@pug/sections/hero/_hero.scss";
@@ -46,6 +49,7 @@
 @use "@pug/sections/about/_about.scss";
 @use "@pug/sections/fees/_fees.scss";
 @use "@pug/sections/affiliate/_affiliate.scss";
+@use "@pug/sections/callback/_callback.scss";
 
 // Layouts
 @use "@pug/layouts/footer/_footer.scss";

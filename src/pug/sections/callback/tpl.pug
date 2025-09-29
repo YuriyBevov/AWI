@@ -1,20 +1,64 @@
-+social({
-  title: "Мы в социальных сетях:",
-  items: [
-    {
-      link: "#",
-      icon: "./assets/img/tg-filled-icon.png",
-      alt: "telegram"
-    },
-    {
-      link: "#",
-      icon: "./assets/img/whatsapp-filled-icon.png",
-      alt: "whatsapp"
-    },
-    {
-      link: "#",
-      icon: "./assets/img/mail-filled-icon.png",
-      alt: "E-mail"
-    }
-  ]
-})
+include ../../mixins/components/label/tpl.pug
+include ../../mixins/components/social/tpl.pug
+include ../../mixins/components/form/tpl.pug
+
+section.section.callback
+  .container
+    .grid
+      .section__header
+        +label({
+          text: "Работа у нас",
+          cls: "label--bordered label--dotted"
+        })
+
+        h2.title Нужна помощь?
+
+        .section__text
+          p В целом, конечно, перспективное планирование влечет за собой процесс внедрения и модернизации распределения внутренних резервов и ресурсов.
+
+        +social({
+          title: "Мы в социальных сетях:",
+          items: [
+            {
+              link: "#",
+              icon: "./assets/img/tg-filled-icon.png",
+              alt: "telegram"
+            },
+            {
+              link: "#",
+              icon: "./assets/img/whatsapp-filled-icon.png",
+              alt: "whatsapp"
+            },
+            {
+              link: "#",
+              icon: "./assets/img/mail-filled-icon.png",
+              alt: "E-mail"
+            }
+          ]
+        })
+      
+      +form({
+        fields: [
+          {
+            type: "text",
+            name: "name",
+            placeholder: "Имя"
+          },
+          {
+            type: "tel",
+            name: "phone",
+            placeholder: "Телефон"
+          },
+          {
+            type: "textarea",
+            name: "message",
+            placeholder: "Ваше сообщение"
+          },
+          {
+            type: "checkbox",
+            name: "consent",
+            label: `Я согласен с условиями обработки <button data-modal-opener="user-consent-modal">персональных данных</button>`
+          }
+        ],
+        buttonText: "Отправить"
+      })

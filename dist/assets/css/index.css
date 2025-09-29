@@ -312,6 +312,9 @@ img {
     text-align: revert;
   }
 }
+.section__header .title {
+  text-transform: uppercase;
+}
 .section__header-side-container {
   container: section-header-side-container/inline-size;
 }
@@ -1202,8 +1205,10 @@ img {
 }
 
 .social .subtitle {
+  display: inline-block;
   font-size: clamp(16px, 2vw, 18px);
   font-weight: 600;
+  margin-bottom: 16px;
 }
 .social ul {
   margin: 0;
@@ -1355,6 +1360,13 @@ img {
 }
 .affiliate-modal .modal-content .btn {
   max-width: 100%;
+}
+
+.textarea {
+  border: 2px solid var(--gray-color);
+  border-radius: 20px;
+  padding: 20px;
+  resize: none;
 }
 
 .hero {
@@ -1568,6 +1580,12 @@ img {
 .affiliate picture,
 .affiliate iframe {
   border-radius: 30px;
+}
+
+.callback .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
 .footer {

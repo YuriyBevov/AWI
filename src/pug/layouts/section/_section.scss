@@ -41,6 +41,10 @@
 			text-align: revert;
 		}
 
+		.title {
+			text-transform: uppercase;
+		}
+
 		&-side {
 			&-container {
 				container: section-header-side-container / inline-size;

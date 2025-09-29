@@ -1,0 +1,20 @@
+include ../form-controls/checkbox/tpl.pug
+include ../form-controls/textarea/tpl.pug
+include ../form-controls/input/tpl.pug
+
+mixin form(data)
+	form.form(action="#" method="POST" class= data.cls)
+		each field in data.fields
+			if field.type === "checkbox"
+				- console.log(field.type)
+				+checkbox(field)
+			if field.type === "textarea"
+				- console.log(field.type)
+				+textarea(field)
+			if field.type === "text" || field.type === "tel" || field.type === "email"
+				- console.log(field.type)
+				+textarea(field)
+		
+		button.button(type="submit")!= data.buttonText
+
+		

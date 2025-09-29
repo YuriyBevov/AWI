@@ -2,8 +2,10 @@
 
 .social {
 	.subtitle {
+		display: inline-block;
 		font-size: clamp(16px, 2vw, 18px);
 		font-weight: 600;
+		margin-bottom: 16px;
 	}
 
 	ul {
