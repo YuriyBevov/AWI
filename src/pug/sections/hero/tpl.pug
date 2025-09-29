@@ -1,7 +1,31 @@
 include ../../mixins/components/features-row/tpl.pug
+include ../../mixins/components/label/tpl.pug
+include ../../mixins/components/main-btn/tpl.pug
 
 section.section.hero#hero
   .container
+    .grid
+      .grid-item.hero__content 
+        +label({
+          text: 'Первое занятие бесплатно',
+          cls: 'label--bordered label--colored',
+        })
+
+        h1.title Академия водных искусств
+        p.text Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию
+
+        +mainBtn({
+          text: 'Хочу бесплатное занятие',
+          modalID: 'offer-modal',
+        })
+      .grid-item.hero__banner
+        img(src="./assets/img/hero-banner.png" alt="АВИ - Академия Водных Искусств" width="530" height="530")
+      .grid-item.hero__side
+        .banner-sm
+          img(src="./assets/img/banner-sm-img-1.png" alt="АВИ - Академия Водных Искусств" width="270" height="200")
+        .banner-sm
+          img(src="./assets/img/banner-sm-img-2.png" alt="АВИ - Академия Водных Искусств" width="270" height="200")
+
     +features-row({
       items: [
         {

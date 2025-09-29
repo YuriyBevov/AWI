@@ -39,6 +39,7 @@
 @use "@pug/mixins/components/modals/affiliate-modal/_affiliate-modal.scss";
 
 // Sections
+@use "@pug/sections/hero/_hero.scss";
 @use "@pug/sections/staff/_staff.scss";
 @use "@pug/sections/vacancy/_vacancy.scss";
 @use "@pug/sections/courses/_courses.scss";

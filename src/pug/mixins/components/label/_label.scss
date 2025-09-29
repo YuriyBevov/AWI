@@ -21,6 +21,11 @@
 		border: 2px solid rgba(77, 114, 152, 0.15);
 	}
 
+	&--colored {
+		border-color: var(--primary-light-color);
+		color: var(--primary-light-color);
+	}
+
 	&--dotted {
 		position: relative;
 		padding-left: 36px;
