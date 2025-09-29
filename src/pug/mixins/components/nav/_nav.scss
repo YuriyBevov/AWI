@@ -106,12 +106,12 @@
 		.nav__list {
 			flex-direction: column;
 			align-items: flex-start;
-			margin: 20px 0;
+			// margin: 20px 0;
 			border-bottom: none;
 
 			@include container-up("header", $desktop-view-width) {
 				flex-direction: row;
-				border-bottom: 1px solid var(--gray-color);
+				// border-bottom: 1px solid var(--gray-color);
 			}
 		}
 

@@ -1,33 +1,67 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+
 .hero {
+	padding-top: 0;
+	container: hero / inline-size;
+
 	.container {
 		display: flex;
 		flex-direction: column;
-		gap: 60px;
+		gap: clamp(20px, 3vw, 60px);
 	}
 
 	.grid {
 		display: grid;
-		grid-template-columns: 300px auto 270px;
+		grid-template-columns: 1fr;
 		gap: 20px;
 
+		@include container-up("hero", 640px) {
+			grid-template-columns: 2fr 3fr;
+		}
+
+		@include container-up("hero", $laptop-width) {
+			grid-template-columns: 300px auto 270px;
+		}
+
 		&-item {
-			outline: 1px solid red;
+			order: 2;
 			&.hero__content {
 				display: flex;
 				flex-direction: column;
+				align-items: center;
 				gap: 24px;
 				justify-content: flex-end;
+
+				@include container-up("hero", $mobile-width) {
+					align-items: revert;
+				}
+
+				.title,
+				.text {
+					text-align: center;
+
+					@include container-up("hero", $mobile-width) {
+						text-align: revert;
+					}
+				}
 
 				.title {
 					text-transform: uppercase;
 				}
 
 				.btn {
-					margin-top: 12px;
+					@include container-up("hero", $mobile-width) {
+						margin-top: 12px;
+					}
 				}
 			}
 
 			&.hero__banner {
+				order: 1;
+				@include container-up("hero", 640px) {
+					order: 2;
+				}
 				img {
 					width: 100%;
 					height: 100%;
@@ -38,14 +72,37 @@
 
 			&.hero__side {
 				display: flex;
-				flex-direction: column;
+
 				gap: 20px;
 				justify-content: flex-end;
 				width: 100%;
+				grid-column: -1/1;
+				flex-direction: column;
+
+				@include container-up("hero", $mobile-width) {
+					flex-direction: revert;
+				}
+
+				@include container-up("hero", $laptop-width) {
+					grid-column: revert;
+					flex-direction: column;
+				}
 
 				.banner-sm {
 					border-radius: 30px;
 					overflow: hidden;
+					width: 100%;
+					position: relative;
+
+					&::after {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background-color: rgba(1, 82, 164, 0.4);
+					}
 
 					img {
 						width: 100%;
