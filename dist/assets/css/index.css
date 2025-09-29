@@ -435,10 +435,9 @@ img {
   --btn-gradient-end: #014fa2;
 }
 .modal-closer svg {
-  width: 32px;
-  height: 32px;
-  stroke: var(--white-color);
-  stroke-width: 2px;
+  width: 18px;
+  height: 18px;
+  fill: var(--white-color);
 }
 
 @property --btn-gradient-start {
@@ -1291,6 +1290,59 @@ img {
 .staff-preview-modal .modal-content > * {
   margin: 0;
   font-weight: 500;
+}
+
+.affiliate-modal {
+  max-width: 480px;
+}
+.affiliate-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.affiliate-modal .modal-content .title {
+  font-size: 24px;
+}
+.affiliate-modal .modal-content .price-list ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.affiliate-modal .modal-content .price-list ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px 24px;
+  padding: 16px 0;
+}
+@media (min-width: 420px) {
+  .affiliate-modal .modal-content .price-list ul li {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.affiliate-modal .modal-content .price-list ul li span {
+  font-size: 14px;
+  flex-basis: calc(50% - 12px);
+}
+.affiliate-modal .modal-content .price-list ul li span:first-child {
+  margin-right: auto;
+}
+.affiliate-modal .modal-content .price-list ul li span:last-child {
+  font-weight: 700;
+  white-space: nowrap;
+}
+@media (min-width: 420px) {
+  .affiliate-modal .modal-content .price-list ul li span:last-child {
+    text-align: right;
+  }
+}
+.affiliate-modal .modal-content .price-list ul li:not(:last-child) {
+  border-bottom: 1px solid var(--gray-color);
+}
+.affiliate-modal .modal-content .btn {
+  max-width: 100%;
 }
 
 .staff .base-slider .swiper-slide {

@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index.pug-CwEUawec.js"></script>
+    <script type="module" crossorigin src="./assets/index.pug-KKps1UY0.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/css/index.css">
   </head>
   <body>
@@ -233,9 +233,25 @@
                             <div class="workday-label">Чт</div>
                             <div class="workday-label active">Пт</div>
                           </div><span class="subtitle">Среда/пятница 17:00-17:45 вода, 18:00-18:45 зал</span>
-                                    <button class="btn"><span>Узнать стоимость</span>
+                                    <button class="btn" data-modal-opener="affiliate-modal"><span>Узнать стоимость</span>
                                     </button>
                         </div>
+                        <template id="affiliate-modal-tpl" data-title="Стоимость занятий">
+                          <p class="text">Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию</p><span class="title">Бассейн «Чайковский»</span>
+                          <div class="price-list">
+                            <ul>
+                              <li><span class="price-list__name">8 занятий</span><span class="price-list__value">9 600 ₽</span></li>
+                              <li><span class="price-list__name">4 занятия</span><span class="price-list__value">6000 ₽</span></li>
+                              <li><span class="price-list__name">Разовое занятие</span><span class="price-list__value">1800 ₽</span></li>
+                              <li><span class="price-list__name">Индивидуальное занятие</span><span class="price-list__value">3 200 ₽ - 45 мин</span></li>
+                              <li><span class="price-list__name">Индивидуальное занятие</span><span class="price-list__value">4 800 ₽ - 90 мин</span></li>
+                              <li><span class="price-list__name">Сплит тренировка</span><span class="price-list__value">2 500 ₽ - 45 мин</span></li>
+                              <li><span class="price-list__name">Сплит тренировка</span><span class="price-list__value">3 200 ₽ - 90 мин</span></li>
+                            </ul>
+                          </div>
+                                    <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
+                                    </button>
+                        </template>
                       </div>
             <picture>
               <source type="image/webp" srcset="./assets/webp/affiliate-img.webp 1x, ./assets/webp/affiliate-img@2x.webp 2x">
@@ -254,9 +270,25 @@
                             <div class="workday-label">Чт</div>
                             <div class="workday-label active">Пт</div>
                           </div><span class="subtitle">Среда 15:30-16:15 вода, 16:30-17:15 зал.<br>Воскресенье 17:30-18:15 зал, 18:30-19:15 вода.</span>
-                                    <button class="btn"><span>Узнать стоимость</span>
+                                    <button class="btn" data-modal-opener="affiliate-modal"><span>Узнать стоимость</span>
                                     </button>
                         </div>
+                        <template id="affiliate-modal-tpl" data-title="Стоимость занятий">
+                          <p class="text">Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию</p><span class="title">Бассейн «Бейт-Швидлер»</span>
+                          <div class="price-list">
+                            <ul>
+                              <li><span class="price-list__name">8 занятий</span><span class="price-list__value">9 600 ₽</span></li>
+                              <li><span class="price-list__name">4 занятия</span><span class="price-list__value">6000 ₽</span></li>
+                              <li><span class="price-list__name">Разовое занятие</span><span class="price-list__value">1800 ₽</span></li>
+                              <li><span class="price-list__name">Индивидуальное занятие</span><span class="price-list__value">3 200 ₽ - 45 мин</span></li>
+                              <li><span class="price-list__name">Индивидуальное занятие</span><span class="price-list__value">4 800 ₽ - 90 мин</span></li>
+                              <li><span class="price-list__name">Сплит тренировка</span><span class="price-list__value">2 500 ₽ - 45 мин</span></li>
+                              <li><span class="price-list__name">Сплит тренировка</span><span class="price-list__value">3 200 ₽ - 90 мин</span></li>
+                            </ul>
+                          </div>
+                                    <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
+                                    </button>
+                        </template>
                       </div>
             <picture>
               <source type="image/webp" srcset="./assets/webp/affiliate-img.webp 1x, ./assets/webp/affiliate-img@2x.webp 2x">
@@ -449,6 +481,20 @@
     </footer>
     <div class="modal-overlay">
       <div class="modal main-modal staff-preview-modal" id="staff-preview-modal">
+        <div class="modal-wrapper">
+          <div class="modal-header"><span class="title"></span>
+            <button class="modal-closer" type="button" aria-label="Закрыть">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="./assets/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-content"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal main-modal affiliate-modal" id="affiliate-modal">
         <div class="modal-wrapper">
           <div class="modal-header"><span class="title"></span>
             <button class="modal-closer" type="button" aria-label="Закрыть">
