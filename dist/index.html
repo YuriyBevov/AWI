@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index.pug-DHVceaaV.js"></script>
+    <script type="module" crossorigin src="./assets/index.pug-CrFZ0nzz.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/css/index.css">
   </head>
   <body>
@@ -28,7 +28,7 @@
                   <li><a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPXSURBVHgBzZhfSFNRHMe/5zpWYsKsKLIXp+F60Fz/XVEsg3poM6Me8q3IKHuptIegoHqop7L1UklCPWUvgeWiP1BZUBMqULTIkTofVJRKw0zKdk+/39kcujR219R9YLv3nHu2++X3797zE5iCkhPXnEFd2jVoBUEh7EJKS/hSFowRUN+Cj2JQSL1Z09BQd7G8YbLFInrCXVldAikvx3FjowQAea6+qvzW+MmU8YPiimoSIj10asH0Q/cQJcsdbrT5vC/+EuSqqD5DYk5i5nHaNros/tfexzxQLnNXXNtHpzcxmwixq/7SoTotPDqD2SYUtxAuyiahi+dIAlI0uUXTdDiRJAR1za5JoRUgSdAgCyiG5EykeExIAbsJMv4CmJ+zBNalC5CduVCN+74OobW9By3tvYgHKWExIQ6yMxegrGQD8nIyJ73eT8JOXa1H38AQjCLcFdelkR9sXWvD0b1Odd76qQdP37bRsRdpqWYsmp+OrWtysT7fqq5fudOAp2/aYARDFlqUka7EDI/8RE2dT4mJMAB09HxBY2sARST64E6HWtvZ/VnNT4ugC0fc6lhzLyQmbe4clG5fjcL8LBL5Cx108zuP3+EZWYUfASzoALmW3ZdwQfkUL+wStgC7ga3FAnmOLZY21wwrxRavO1p1V60pWpurxhz8sQa6hhjJoz9lxmKCLcNi7r9sQdn5WpSevqXOea502+oJa63hLEyoIL4RwxnEcKaxm2ruvVYWYmqfvFXnhXlZatwatko2lYaECxrjB4lg0lLnTDgyw+Fr/0PMgjq7Q5ky5jqOJU710m2rQsIowLk2sUD+LKYY449RYg7qznDqFq2zUYb5lXvYNcWbV6japERFrGaGp3J3ZGykcqfYHK6zsSzsp6qbtyxTZU3/wHe0dfWj8X3ISmYTv3gKCmI/zt54iNHRIDLSUzH6O4haKgOPfB8QK4YqNQeyp3JPOJhfKQGJJmYLMQNDI8o6m1bmkLuslD0LlRXYQmaTCfPIRfOUm4Sajwe2UCcMbnm4BFwod0dKQTRcsY9RcYyDQFxPe65FZedvq3jirIvOJiPPrmhMQohBKQ098CO0qHefHiQM2t1q0PVmJAs6vtE7tWxCkiBIiyY1kTSCuAmhdq7FlGly+psL/4SEBO5XHbaqZ5kU4jhmGUmdED6qZoPf5/2YW+jKEAKFmAVEqC3jiQhSohq9j3IdO0iTcGIGob3YFRIT6bpM6A/5fQ8abI4dXSTKjmnuEXHMUFrt91467ImanxxuQvC+X0IU0CrLuA1lFowRUDcS3M6TTTr0Zs5s7xQtvT/gAnGjq0tUOAAAAABJRU5ErkJggg==" alt="E-mail"></a></li>
                 </ul>
               </div><a class="link--bolder link" href="tel:88002006655">8 (800) 200 66 55</a>
-              <button class="btn"><span>Обратный звонок</span>
+              <button class="btn" data-modal-opener="callback-modal"><span>Обратный звонок</span>
               </button>
           <button class="burger" aria-label="Меню"><span class="burger-line burger-line--top"></span><span class="burger-line burger-line--bottom"> </span></button>
         </div>
@@ -68,7 +68,7 @@
                     </div>
               <h1 class="title">Академия водных искусств</h1>
               <p class="text">Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию</p>
-                    <button class="btn" data-modal-opener="offer-modal"><span>Хочу бесплатное занятие</span>
+                    <button class="btn" data-modal-opener="promo-modal"><span>Хочу бесплатное занятие</span>
                     </button>
             </div>
             <div class="grid-item hero__banner"><img src="./assets/img/hero-banner.png" alt="АВИ - Академия Водных Искусств" width="530" height="530"></div>
@@ -320,7 +320,7 @@
             <h2 class="title">Сборы</h2>
             <div class="section__text"><p>Академия Водных Искусств предлагает уникальную возможность для наших учеников и любителей водных занятий принять участие в спортивных сборах! Это отличная возможность погрузиться в мир водных искусств, улучшить свои навыки и завести новые знакомства с единомышленниками.</p><p>Сборы проводятся несколько раз в году, и даты зависят от сезона и расписания академии. Информацию о предстоящих сборах можно найти на нашем сайте или получить, связавшись с нашим администратором.</p>
             </div>
-                  <button class="btn"><span>Уточнить расписание</span>
+                  <button class="btn" data-modal-opener="question-modal"><span>Уточнить расписание</span>
                   </button>
           </div>
         </div>
@@ -530,7 +530,7 @@
                   <li><a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPXSURBVHgBzZhfSFNRHMe/5zpWYsKsKLIXp+F60Fz/XVEsg3poM6Me8q3IKHuptIegoHqop7L1UklCPWUvgeWiP1BZUBMqULTIkTofVJRKw0zKdk+/39kcujR219R9YLv3nHu2++X3797zE5iCkhPXnEFd2jVoBUEh7EJKS/hSFowRUN+Cj2JQSL1Z09BQd7G8YbLFInrCXVldAikvx3FjowQAea6+qvzW+MmU8YPiimoSIj10asH0Q/cQJcsdbrT5vC/+EuSqqD5DYk5i5nHaNros/tfexzxQLnNXXNtHpzcxmwixq/7SoTotPDqD2SYUtxAuyiahi+dIAlI0uUXTdDiRJAR1za5JoRUgSdAgCyiG5EykeExIAbsJMv4CmJ+zBNalC5CduVCN+74OobW9By3tvYgHKWExIQ6yMxegrGQD8nIyJ73eT8JOXa1H38AQjCLcFdelkR9sXWvD0b1Odd76qQdP37bRsRdpqWYsmp+OrWtysT7fqq5fudOAp2/aYARDFlqUka7EDI/8RE2dT4mJMAB09HxBY2sARST64E6HWtvZ/VnNT4ugC0fc6lhzLyQmbe4clG5fjcL8LBL5Cx108zuP3+EZWYUfASzoALmW3ZdwQfkUL+wStgC7ga3FAnmOLZY21wwrxRavO1p1V60pWpurxhz8sQa6hhjJoz9lxmKCLcNi7r9sQdn5WpSevqXOea502+oJa63hLEyoIL4RwxnEcKaxm2ruvVYWYmqfvFXnhXlZatwatko2lYaECxrjB4lg0lLnTDgyw+Fr/0PMgjq7Q5ky5jqOJU710m2rQsIowLk2sUD+LKYY449RYg7qznDqFq2zUYb5lXvYNcWbV6japERFrGaGp3J3ZGykcqfYHK6zsSzsp6qbtyxTZU3/wHe0dfWj8X3ISmYTv3gKCmI/zt54iNHRIDLSUzH6O4haKgOPfB8QK4YqNQeyp3JPOJhfKQGJJmYLMQNDI8o6m1bmkLuslD0LlRXYQmaTCfPIRfOUm4Sajwe2UCcMbnm4BFwod0dKQTRcsY9RcYyDQFxPe65FZedvq3jirIvOJiPPrmhMQohBKQ098CO0qHefHiQM2t1q0PVmJAs6vtE7tWxCkiBIiyY1kTSCuAmhdq7FlGly+psL/4SEBO5XHbaqZ5kU4jhmGUmdED6qZoPf5/2YW+jKEAKFmAVEqC3jiQhSohq9j3IdO0iTcGIGob3YFRIT6bpM6A/5fQ8abI4dXSTKjmnuEXHMUFrt91467ImanxxuQvC+X0IU0CrLuA1lFowRUDcS3M6TTTr0Zs5s7xQtvT/gAnGjq0tUOAAAAABJRU5ErkJggg==" alt="E-mail"></a></li>
                 </ul>
               </div><a class="link--bolder link" href="tel:88002006655">8 (800) 200 66 55</a>
-              <button class="btn"><span>Обратный звонок</span>
+              <button class="btn" data-modal-opener="callback-modal"><span>Обратный звонок</span>
               </button>
         </div>
         <div class="footer__section footer__section--bottom">
@@ -577,7 +577,7 @@
     <div class="modal-overlay">
       <div class="modal main-modal success-modal" id="success-modal">
         <div class="modal-wrapper">
-          <div class="modal-header"><span class="title"></span>
+          <div class="modal-header"><span class="title">Успешно!</span>
             <button class="modal-closer" type="button" aria-label="Закрыть">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="./assets/sprite.svg#close"></use>
@@ -585,7 +585,7 @@
             </button>
           </div>
           <div class="modal-content">
-            <p>success-modal</p>
+            <p class="text">В ближайшее время с Вами свяжется наш администратор и уточнит все детали и вопросы.</p>
           </div>
         </div>
       </div>
@@ -593,7 +593,7 @@
     <div class="modal-overlay">
       <div class="modal main-modal error-modal" id="error-modal">
         <div class="modal-wrapper">
-          <div class="modal-header"><span class="title"></span>
+          <div class="modal-header"><span class="title">Ошибка</span>
             <button class="modal-closer" type="button" aria-label="Закрыть">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="./assets/sprite.svg#close"></use>
@@ -601,7 +601,105 @@
             </button>
           </div>
           <div class="modal-content">
-            <p>error-modal</p>
+            <p class="text">Что то пошло не так! Попробуйте еще раз или свяжитесь с администратором!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal main-modal callback-modal" id="callback-modal">
+        <div class="modal-wrapper">
+          <div class="modal-header"><span class="title">Записаться</span>
+            <button class="modal-closer" type="button" aria-label="Закрыть">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="./assets/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-content">
+            <p class="text">Обратный звонок</p>
+                  <form class="form" action="#" method="POST">
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="name" data-required placeholder="Имя">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="tel" name="phone" data-required placeholder="Телефон">
+                            </label>
+                          </div>
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox" id="callback-modal-consent" name="callback-modal-consent" data-required>
+                            <label for="callback-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="user-consent-modal" class="link link--underlined">персональных данных</button></label>
+                          </div>
+                    <button class="btn" type="submit"><span>Отправить</span></button>
+                  </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal main-modal promo-modal" id="promo-modal">
+        <div class="modal-wrapper">
+          <div class="modal-header"><span class="title">Бесплатное занятие</span>
+            <button class="modal-closer" type="button" aria-label="Закрыть">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="./assets/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-content">
+                  <form class="form" action="#" method="POST">
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="name" data-required placeholder="Имя">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="tel" name="phone" data-required placeholder="Телефон">
+                            </label>
+                          </div>
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox" id="promo-modal-consent" name="promo-modal-consent" data-required>
+                            <label for="promo-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="user-consent-modal" class="link link--underlined">персональных данных</button></label>
+                          </div>
+                    <button class="btn" type="submit"><span>Отправить</span></button>
+                  </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal main-modal question-modal" id="question-modal">
+        <div class="modal-wrapper">
+          <div class="modal-header"><span class="title">Уточнить расписание</span>
+            <button class="modal-closer" type="button" aria-label="Закрыть">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="./assets/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-content">
+            <p class="text">Пишите, мы с радостью проконсультируем Вас!</p>
+                  <form class="form" action="#" method="POST">
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="name" data-required placeholder="Имя">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="tel" name="phone" data-required placeholder="Телефон">
+                            </label>
+                          </div>
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox" id="question-modal-consent" name="question-modal-consent" data-required>
+                            <label for="question-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="user-consent-modal" class="link link--underlined">персональных данных</button></label>
+                          </div>
+                    <button class="btn" type="submit"><span>Отправить</span></button>
+                  </form>
           </div>
         </div>
       </div>

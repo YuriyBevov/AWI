@@ -380,6 +380,9 @@ img {
   border-radius: 20px;
 }
 .modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   max-height: 440px;
   overflow: hidden;
   overflow-y: auto;
@@ -402,6 +405,7 @@ img {
 .modal-header .title {
   display: inline-block;
   font-size: clamp(24px, 3.2vw, 40px);
+  text-transform: uppercase;
   line-height: 1.2;
   width: 100%;
   color: var(--primary-color);
@@ -1323,11 +1327,6 @@ a.btn {
 .affiliate-modal {
   max-width: 480px;
 }
-.affiliate-modal .modal-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
 .affiliate-modal .modal-content .title {
   font-size: 24px;
 }
@@ -1508,11 +1507,12 @@ a.btn {
   opacity: 0;
   visibility: hidden;
   z-index: -1;
+  transition: opacity var(--main-transition);
 }
 .loader-wrapper:has(.loader.active) {
   opacity: 1;
   visibility: visible;
-  z-index: 198;
+  z-index: 301;
 }
 
 .loader {

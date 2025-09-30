@@ -1,0 +1,33 @@
+extends ../../../../layouts/modals/tpl
+
+block variables
+  - modalId = "promo-modal"
+  - modalClasses = "promo-modal"
+  - modalTitle = 'Бесплатное занятие'
+  - modalPreviewText = ''
+
+block modalContent
+
+  +form({
+    fields: [
+      {
+        type: "text",
+        name: "name",
+        placeholder: "Имя",
+        required: true
+      },
+      {
+        type: "tel",
+        name: "phone",
+        placeholder: "Телефон",
+        required: true
+      },
+      {
+        type: "checkbox",
+        name: "promo-modal-consent",
+        required: true,
+        label: `Я согласен с условиями обработки <button type="button" data-modal-opener="user-consent-modal" class="link link--underlined">персональных данных</button>`
+      }
+    ],
+    buttonText: "Отправить"
+  })

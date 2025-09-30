@@ -12467,7 +12467,9 @@ function sendForm(form) {
     hideLoader();
     form.reset();
     const currentModal = form.closest(".modal");
-    new Modal(currentModal).refresh();
+    if (currentModal) {
+      new Modal(currentModal).refresh();
+    }
     setTimeout(() => {
       new Modal(successModal).show();
     }, 700);

@@ -12,11 +12,12 @@
 	opacity: 0;
 	visibility: hidden;
 	z-index: -1;
+	transition: opacity var(--main-transition);
 
 	&:has(.loader.active) {
 		opacity: 1;
 		visibility: visible;
-		z-index: 198;
+		z-index: 301;
 	}
 }
 .loader {

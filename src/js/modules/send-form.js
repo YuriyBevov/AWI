@@ -17,7 +17,9 @@ export function sendForm(form) {
 
 		const currentModal = form.closest(".modal");
 
-		new Modal(currentModal).refresh();
+		if (currentModal) {
+			new Modal(currentModal).refresh();
+		}
 
 		setTimeout(() => {
 			new Modal(successModal).show();
