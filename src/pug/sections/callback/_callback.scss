@@ -1,7 +1,30 @@
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
 .callback {
+	container: callback / inline-size;
+	padding: 0 var(--container-offset);
+
+	.container {
+		padding: clamp(20px, 3vw, 40px);
+
+		border-radius: 30px;
+		background-color: var(--white-color);
+	}
+
+	.social ul {
+		justify-content: center;
+		@include container-up("main", $mobile-width) {
+			justify-content: revert;
+		}
+	}
+
 	.grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
 		gap: 24px;
+
+		@include container-up("callback", $tablet-width) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 }

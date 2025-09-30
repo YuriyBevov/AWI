@@ -2,8 +2,8 @@ mixin social(data)
   .social
     if data.title
       span.subtitle!= data.title
-    ul.social__list-list
+    ul
       each item in data.items
-        li.social__list-item
+        li
           a(href=item.link)
             img(src=item.icon alt=item.alt )

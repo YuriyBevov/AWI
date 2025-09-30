@@ -40,6 +40,8 @@
 @use "@pug/mixins/components/form-controls/checkbox/_checkbox.scss";
 @use "@pug/mixins/components/form-controls/textarea/_textarea.scss";
 @use "@pug/mixins/components/form-controls/input/_input.scss";
+@use "@pug/mixins/components/form/_form.scss";
+@use "@pug/mixins/components/loader/_loader.scss";
 
 // Sections
 @use "@pug/sections/hero/_hero.scss";
@@ -48,6 +50,7 @@
 @use "@pug/sections/courses/_courses.scss";
 @use "@pug/sections/about/_about.scss";
 @use "@pug/sections/fees/_fees.scss";
+@use "@pug/sections/reviews/_reviews.scss";
 @use "@pug/sections/affiliate/_affiliate.scss";
 @use "@pug/sections/callback/_callback.scss";
 

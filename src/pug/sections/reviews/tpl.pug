@@ -1,0 +1,24 @@
+include ../../mixins/components/label/tpl.pug
+include ../../mixins/components/main-btn/tpl.pug
+
+section.section.reviews
+  .container
+    .grid
+      iframe(src="https://yandex.ru/maps-reviews-widget/218081862638?comments")
+      
+      .section__header
+        +label({
+          text: 'Что о нас говорят',
+          cls: 'label--bordered label--dotted'
+        })
+        h2.title Отзывы
+        .section-text
+          p.text Мы очень рады, что наши ученики и их родители довольны нашими занятиями. Мы работаем над улучшением качества наших занятий и предоставлением лучшего сервиса для наших клиентов.
+
+        +mainBtn({
+          tag: 'a',
+          text: 'Все отзывы на Яндекс',
+          href: 'https://yandex.ru/maps/org/akademiya_vodnykh_iskusstv/218081862638/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Академия Водных Искусств</a><a href="https://yandex.ru/maps/213/moscow/category/sports_club/184107297/?utm_medium=mapframe&utm_source=maps',
+          target: '_blank'
+        })
+

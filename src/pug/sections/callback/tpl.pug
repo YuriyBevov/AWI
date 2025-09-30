@@ -2,15 +2,10 @@ include ../../mixins/components/label/tpl.pug
 include ../../mixins/components/social/tpl.pug
 include ../../mixins/components/form/tpl.pug
 
-section.section.callback
+section.section.section--decorated.callback
   .container
     .grid
       .section__header
-        +label({
-          text: "Работа у нас",
-          cls: "label--bordered label--dotted"
-        })
-
         h2.title Нужна помощь?
 
         .section__text
@@ -37,28 +32,32 @@ section.section.callback
           ]
         })
       
-      //- +form({
-      //-   fields: [
-      //-     {
-      //-       type: "text",
-      //-       name: "name",
-      //-       placeholder: "Имя"
-      //-     },
-      //-     {
-      //-       type: "tel",
-      //-       name: "phone",
-      //-       placeholder: "Телефон"
-      //-     },
-      //-     {
-      //-       type: "textarea",
-      //-       name: "message",
-      //-       placeholder: "Ваше сообщение"
-      //-     },
-      //-     {
-      //-       type: "checkbox",
-      //-       name: "consent",
-      //-       label: `Я согласен с условиями обработки <button data-modal-opener="user-consent-modal">персональных данных</button>`
-      //-     }
-      //-   ],
-      //-   buttonText: "Отправить"
-      //- })
+      +form({
+        fields: [
+          {
+            type: "text",
+            name: "name",
+            placeholder: "Имя",
+            required: true
+          },
+          {
+            type: "tel",
+            name: "phone",
+            placeholder: "Телефон",
+            required: true
+          },
+          {
+            type: "textarea",
+            name: "message",
+            placeholder: "Ваше сообщение",
+          },
+          {
+            type: "checkbox",
+            name: "consent",
+            required: true,
+            label: `Я согласен с условиями обработки <button type="button" data-modal-opener="user-consent-modal" class="link link--underlined">персональных данных</button>`
+          }
+        ],
+        buttonText: "Отправить"
+      })
+

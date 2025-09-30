@@ -1,2 +1,71 @@
-.checkbox {
+@use "@styles/extends/_form-control-styles.scss";
+@use "@styles/extends/_shaker.scss";
+.checkbox-wrapper {
+	min-height: 30px;
+
+	label {
+		@extend %control-font-styles;
+		display: inline-block;
+		// flex-wrap: wrap;
+		position: relative;
+		padding-left: 36px;
+		padding-top: 3px;
+
+		@media (hover: hover) {
+			&:hover::before {
+				border-color: var(--gray-dark-color);
+			}
+		}
+
+		&:focus::before {
+			border-color: var(--gray-dark-color);
+		}
+
+		button {
+			padding: 0;
+			margin: 0;
+			background-color: transparent;
+			border: none;
+			@extend %control-font-styles;
+			font-weight: 600;
+		}
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 28px;
+			height: 28px;
+			border: 2px solid var(--gray-color);
+			border-radius: 10px;
+			content: "";
+
+			transition: border-color var(--main-transition),
+				background-color var(--main-transition);
+		}
+	}
+
+	input {
+		display: none;
+	}
+
+	&:has(input:checked) {
+		label::before {
+			background-color: var(--success-color);
+			border-color: transparent;
+			background-image: url("@img/check-icon.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+
+	&:has(.invalid-control) label {
+		color: var(--danger-color);
+	}
+
+	&:has(.invalid-control.shaker) label {
+		animation: shaker var(--main-transition);
+	}
 }

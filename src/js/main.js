@@ -5,3 +5,5 @@ import "../pug/mixins/components/burger/burger";
 import "./modules/modals";
 import "../pug/mixins/components/modals/staff-preview-modal/staff-preview-modal";
 import "../pug/mixins/components/modals/affiliate-modal/affiliate-modal";
+import "./modules/mask";
+import "./modules/form-submit";

@@ -1,0 +1,24 @@
+%control-font-styles {
+	font-family: var(--primary-font);
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--secondary-color);
+}
+
+%control-base-styles {
+	width: 100%;
+	border: 2px solid var(--gray-color);
+	border-radius: 20px;
+	padding: 20px 20px 16px;
+	transition: border-color var(--main-transition);
+
+	@media (hover: hover) {
+		&:hover {
+			border-color: var(--gray-dark-color);
+		}
+	}
+
+	&:focus {
+		border-color: var(--gray-dark-color);
+	}
+}

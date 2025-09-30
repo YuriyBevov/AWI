@@ -16,6 +16,7 @@ html(lang="ru")
 			include ./pug/sections/about/tpl.pug
 			include ./pug/sections/affiliate/tpl.pug
 			include ./pug/sections/fees/tpl.pug
+			include ./pug/sections/reviews/tpl.pug
 			include ./pug/sections/courses/tpl.pug
 			include ./pug/sections/vacancy/tpl.pug
 			include ./pug/sections/callback/tpl.pug
@@ -23,5 +24,8 @@ html(lang="ru")
 
 		include ./pug/mixins/components/modals/staff-preview-modal/tpl.pug
 		include ./pug/mixins/components/modals/affiliate-modal/tpl.pug
+		include ./pug/mixins/components/modals/success-modal/tpl.pug
+		include ./pug/mixins/components/modals/error-modal/tpl.pug
+		include ./pug/mixins/components/loader/loader.pug
 
 		script(type="module" src="./js/main.js")
