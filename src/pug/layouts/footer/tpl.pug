@@ -79,17 +79,17 @@ footer.footer
       })
 
       .footer__links
-        +link({
-          href: "#",
-          text: "Политика обработки персональных данных",
-          cls: "link--underlined link--size-xs"
+        +mainBtn({
+          modalID: "policy-modal",
+          text: "Политика конфиденциальности и обработки персональных данных",
+          cls: "policy-btn"
         })
 
-        +link({
-          href: "#",
-          text: "Политика конфиденциальности",
-          cls: "link--underlined link--size-xs"
-        })
+        //- +link({
+        //-   href: "#",
+        //-   text: "Политика конфиденциальности",
+        //-   cls: "link--underlined link--size-xs"
+        //- })
     include ../../mixins/components/developer/tpl.pug
     
 

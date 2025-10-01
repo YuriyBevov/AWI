@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index.pug-CrFZ0nzz.js"></script>
+    <script type="module" crossorigin src="./assets/index.pug-CGPs1L4u.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/css/index.css">
   </head>
   <body>
@@ -264,8 +264,6 @@
                               <li><span class="price-list__name">Сплит тренировка</span><span class="price-list__value">3 200 ₽ - 90 мин</span></li>
                             </ul>
                           </div>
-                                    <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
-                                    </button>
                         </template>
                       </div>
             <picture>
@@ -301,8 +299,6 @@
                               <li><span class="price-list__name">Сплит тренировка</span><span class="price-list__value">3 200 ₽ - 90 мин</span></li>
                             </ul>
                           </div>
-                                    <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
-                                    </button>
                         </template>
                       </div>
             <picture>
@@ -357,7 +353,7 @@
                                           <div class="course-card-container">
                                             <div class="course-card">
                                               <div class="course-card__content"><span class="title">Дети школьного возраста</span><span class="text">- Общая физическая подготовка</span><span class="text">- Растяжка</span><span class="subtitle">Стоимость программы:<br> от <span>11 000*</span> рублей</span><small class="text">*Окончательную стоимость рассчитает менеджер после звонка</small>
-                                                      <button class="btn"><span>Записаться</span>
+                                                      <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
                                                       </button>
                                               </div><img src="./assets/img/program_1.png" width="235" height="270">
                                             </div>
@@ -367,7 +363,7 @@
                                           <div class="course-card-container">
                                             <div class="course-card">
                                               <div class="course-card__content"><span class="title">Дети дошкольного возраста</span><span class="text">- Развивающая гимнастика</span><span class="subtitle">Стоимость программы:<br> от <span> 6 000</span> рублей</span>
-                                                      <button class="btn"><span>Записаться</span>
+                                                      <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
                                                       </button>
                                               </div><img src="./assets/img/program_2.png" width="235" height="270">
                                             </div>
@@ -412,7 +408,7 @@
                                                                 </div>
                                               </div>
                                               <p class="text">Плавание — это доступный и безопасный вид физической активности, который приносит много пользы здоровью и подходит людям разного возраста и уровня физической подготовки. Те, кто плавают не только для удовольствия, часто обращаются за помощью к тренеру по плаванию.</p>
-                                                              <button class="btn"><span>Отправить резюме</span>
+                                                              <button class="btn" data-modal-opener="vacancy-modal"><span>Отправить резюме</span>
                                                               </button>
                                             </div>
                                           </div>
@@ -429,7 +425,7 @@
                                                                 </div>
                                               </div>
                                               <p class="text">Плавание — это доступный и безопасный вид физической активности, который приносит много пользы здоровью и подходит людям разного возраста и уровня физической подготовки. Те, кто плавают не только для удовольствия, часто обращаются за помощью к тренеру по плаванию.</p>
-                                                              <button class="btn"><span>Отправить резюме</span>
+                                                              <button class="btn" data-modal-opener="vacancy-modal"><span>Отправить резюме</span>
                                                               </button>
                                             </div>
                                           </div>
@@ -446,7 +442,7 @@
                                                                 </div>
                                               </div>
                                               <p class="text">Плавание — это доступный и безопасный вид физической активности, который приносит много пользы здоровью и подходит людям разного возраста и уровня физической подготовки. Те, кто плавают не только для удовольствия, часто обращаются за помощью к тренеру по плаванию.</p>
-                                                              <button class="btn"><span>Отправить резюме</span>
+                                                              <button class="btn" data-modal-opener="vacancy-modal"><span>Отправить резюме</span>
                                                               </button>
                                             </div>
                                           </div>
@@ -536,7 +532,9 @@
         <div class="footer__section footer__section--bottom">
               <div class="company-info"><span class="heading">© 2025, Академия Водных Искусств</span><span>Все права защищены</span><span>ИНН 544545454</span><span>ОГРН/ОГРНИП 54454542453453534</span>
               </div>
-          <div class="footer__links"><a class="link--underlined link--size-xs link" href="#">Политика обработки персональных данных</a><a class="link--underlined link--size-xs link" href="#">Политика конфиденциальности</a>
+          <div class="footer__links">
+                <button class="btn policy-btn" data-modal-opener="policy-modal"><span>Политика конфиденциальности и обработки персональных данных</span>
+                </button>
           </div>
         </div>
         <div class="developer-line"><a class="developer-logo" href="https://t.me/+79062723744" aria-label="LittleWeb.ru - Разработка и продвижение сайтов под ключ" rel="nopener nofollow norefferer" target="_blank">
@@ -557,6 +555,7 @@
             </button>
           </div>
           <div class="modal-content"></div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
@@ -571,6 +570,10 @@
             </button>
           </div>
           <div class="modal-content"></div>
+          <div class="modal-footer">
+                <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
+                </button>
+          </div>
         </div>
       </div>
     </div>
@@ -587,6 +590,7 @@
           <div class="modal-content">
             <p class="text">В ближайшее время с Вами свяжется наш администратор и уточнит все детали и вопросы.</p>
           </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
@@ -603,6 +607,7 @@
           <div class="modal-content">
             <p class="text">Что то пошло не так! Попробуйте еще раз или свяжитесь с администратором!</p>
           </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
@@ -631,11 +636,12 @@
                           </div>
                           <div class="checkbox-wrapper">
                             <input type="checkbox" id="callback-modal-consent" name="callback-modal-consent" data-required>
-                            <label for="callback-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="user-consent-modal" class="link link--underlined">персональных данных</button></label>
+                            <label for="callback-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
                           </div>
                     <button class="btn" type="submit"><span>Отправить</span></button>
                   </form>
           </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
@@ -663,11 +669,12 @@
                           </div>
                           <div class="checkbox-wrapper">
                             <input type="checkbox" id="promo-modal-consent" name="promo-modal-consent" data-required>
-                            <label for="promo-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="user-consent-modal" class="link link--underlined">персональных данных</button></label>
+                            <label for="promo-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
                           </div>
                     <button class="btn" type="submit"><span>Отправить</span></button>
                   </form>
           </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
@@ -696,11 +703,150 @@
                           </div>
                           <div class="checkbox-wrapper">
                             <input type="checkbox" id="question-modal-consent" name="question-modal-consent" data-required>
-                            <label for="question-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="user-consent-modal" class="link link--underlined">персональных данных</button></label>
+                            <label for="question-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
                           </div>
                     <button class="btn" type="submit"><span>Отправить</span></button>
                   </form>
           </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal main-modal policy-modal modal--underlayed" id="policy-modal">
+        <div class="modal-wrapper">
+          <div class="modal-header"><span class="title">Политика конфиденциальности и обработки персональных данных</span>
+            <button class="modal-closer" type="button" aria-label="Закрыть">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="./assets/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-content">
+            <div class="content-block"><p><strong>подзаголовок</strong></p>
+<span>текст перед списком</span>
+<ol>
+<li>пункт 1</li>
+<li>пункт 2</li>
+<li>пункт 3</li>
+<li>пункт 4</li>
+<li>пункт 5</li>
+<li>пункт 6</li>
+<li>пункт 7</li>
+<li>пункт 8</li>
+<li>пункт 9</li>
+<li>пункт 10</li>
+</ol>
+<span>текст перед списком</span>
+<ul>
+<li>пункт 1</li>
+<li>пункт 2</li>
+<li>пункт 3</li>
+<li>пункт 4</li>
+<li>пункт 5</li>
+<li>пункт 6</li>
+<li>пункт 7</li>
+<li>пункт 8</li>
+<li>пункт 9</li>
+<li>пункт 10</li>
+</ul>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal main-modal offer-modal" id="offer-modal">
+        <div class="modal-wrapper">
+          <div class="modal-header"><span class="title">Записаться</span>
+            <button class="modal-closer" type="button" aria-label="Закрыть">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="./assets/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-content">
+            <p class="text">Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию</p>
+                  <form class="form" action="#" method="POST">
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="ФИО родителя" data-required placeholder="ФИО родителя">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="ФИО ребенка" data-required placeholder="ФИО ребенка">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="tel" name="Телефон" data-required placeholder="Телефон">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="Откуда узнали о нас" placeholder="Откуда узнали о нас">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="Филиал" placeholder="Филиал">
+                            </label>
+                          </div>
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox" id="promo-modal-consent" name="promo-modal-consent" data-required>
+                            <label for="promo-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
+                          </div>
+                    <button class="btn" type="submit"><span>Отправить</span></button>
+                  </form>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal main-modal vacancy-modal" id="vacancy-modal">
+        <div class="modal-wrapper">
+          <div class="modal-header"><span class="title">Отклик на вакансию</span>
+            <button class="modal-closer" type="button" aria-label="Закрыть">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="./assets/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-content">
+            <p class="text">Присоединейся к нам и помоги вдохновить будущее поколение на спортивные достижения в водных искусствах.</p>
+                  <form class="form" action="#" method="POST">
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="Имя" data-required placeholder="Имя">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="tel" name="Телефон" data-required placeholder="Телефон">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="Опыт работы" data-required placeholder="Опыт работы">
+                            </label>
+                          </div>
+                          <div class="input-wrapper">
+                            <label>
+                              <input class="input" type="text" name="Спорт. разряд" placeholder="Спорт. разряд">
+                            </label>
+                          </div>
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox" id="promo-modal-consent" name="promo-modal-consent" data-required>
+                            <label for="promo-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
+                          </div>
+                    <button class="btn" type="submit"><span>Отправить</span></button>
+                  </form>
+          </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>

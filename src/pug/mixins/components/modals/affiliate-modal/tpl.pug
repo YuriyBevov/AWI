@@ -1,4 +1,5 @@
 extends ../../../../layouts/modals/tpl
+include ../../main-btn/tpl.pug
 
 block variables
   - modalId = "affiliate-modal"
@@ -7,5 +8,11 @@ block variables
   - modalPreviewText = ''
 
 block modalContent
+
+block modalFooter
+  +mainBtn({
+    text: 'Записаться',
+    modalID: 'offer-modal'
+  })
  
   

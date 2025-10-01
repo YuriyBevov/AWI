@@ -1,0 +1,46 @@
+extends ../../../../layouts/modals/tpl
+
+block variables
+  - modalId = "vacancy-modal"
+  - modalClasses = "vacancy-modal"
+  - modalTitle = 'Отклик на вакансию'
+  - modalPreviewText = ''
+
+block modalContent
+  p.text Присоединейся к нам и помоги вдохновить будущее поколение на спортивные достижения в водных искусствах.
+
+  +form({
+    fields: [
+      {
+        type: "text",
+        name: "Имя",
+        placeholder: "Имя",
+        required: true 
+      },
+      {
+        type: "tel",
+        name: "Телефон",
+        placeholder: "Телефон",
+        required: true
+      },
+      {
+        type: "text",
+        name: "Опыт работы",
+        placeholder: "Опыт работы",
+        required: true 
+      },
+
+      {
+        type: "text",
+        name: "Спорт. разряд",
+        placeholder: "Спорт. разряд",
+      },
+      {
+        type: "checkbox",
+        name: "promo-modal-consent",
+        required: true,
+        label: `Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button>`
+      }
+    ],
+    buttonText: "Отправить"
+  })

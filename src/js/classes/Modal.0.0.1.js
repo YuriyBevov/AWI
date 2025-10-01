@@ -1,11 +1,10 @@
 import { gsap } from "gsap";
 
 export class Modal {
-	static openModals = new Set();
-
 	constructor(modal, options = {}) {
 		this.preventBodyLock = options.preventBodyLock ? true : false;
 		this.modal = modal;
+		// this.prevModal = document.querySelector(".modal");
 		this.overlay = this.modal.parentNode;
 		this.close = this.modal.querySelector(".modal-closer");
 
@@ -112,7 +111,6 @@ export class Modal {
 				onComplete: () => {
 					//если в модалке есть форма, при закрытии обнуляю поля
 					this.modal.querySelectorAll("form").forEach((f) => f.reset());
-					Modal.openModals.delete(this.id);
 				},
 			},
 		);
@@ -144,27 +142,8 @@ export class Modal {
 		this.refresh();
 	};
 
-	static closeAllModals = () => {
-		Modal.openModals.forEach((modalId) => {
-			const modal = document.getElementById(modalId);
-			if (modal) {
-				const modalInstance = modal._modalInstance;
-				if (modalInstance) {
-					modalInstance.refresh();
-				}
-			}
-		});
-		Modal.openModals.clear();
-	};
-
 	openModal = (evt) => {
 		evt.preventDefault();
-
-		const isUnderlayed = this.modal.classList.contains("modal--underlayed");
-
-		if (!isUnderlayed) {
-			Modal.closeAllModals();
-		}
 
 		if (!this.preventBodyLock) {
 			this.bodyLocker(false);
@@ -182,7 +161,6 @@ export class Modal {
 				onComplete: () => {
 					this.addListeners();
 					this.focusTrap();
-					Modal.openModals.add(this.id);
 
 					gsap.fromTo(
 						this.modal,
@@ -206,12 +184,6 @@ export class Modal {
 	};
 
 	show = () => {
-		const isUnderlayed = this.modal.classList.contains("modal--underlayed");
-
-		if (!isUnderlayed) {
-			Modal.closeAllModals();
-		}
-
 		if (!this.preventBodyLock) {
 			this.bodyLocker(true);
 		}
@@ -226,15 +198,12 @@ export class Modal {
 				onComplete: () => {
 					this.addListeners();
 					this.focusTrap();
-					Modal.openModals.add(this.id);
 				},
 			},
 		);
 	};
 
 	init() {
-		this.modal._modalInstance = this;
-
 		if (this.openers) {
 			this.isInited = true;
 			this.openers.forEach((opener) => {

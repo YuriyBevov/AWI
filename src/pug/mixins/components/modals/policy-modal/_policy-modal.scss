@@ -1,0 +1,11 @@
+.policy-modal {
+	width: fit-content;
+	max-width: 1140px;
+	.modal-header .title {
+		font-size: clamp(16px, 5vw, 22px);
+	}
+}
+
+.modal-overlay:has(.policy-modal) {
+	z-index: 299;
+}

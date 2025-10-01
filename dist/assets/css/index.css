@@ -87,16 +87,16 @@
   font-display: swap;
   font-style: normal;
 }
-.developer-line a, .link, .social ul a, .btn--outlined, .logo {
+.developer-line a, .link, .social ul a, .btn--outlined, .btn.policy-btn, .logo {
   transition: opacity 0.3s ease-in-out;
   opacity: 1;
 }
 @media (hover: hover) {
-  .developer-line a:hover, .link:hover, .social ul a:hover, .btn--outlined:hover, .logo:hover {
+  .developer-line a:hover, .link:hover, .social ul a:hover, .btn--outlined:hover, .btn.policy-btn:hover, .logo:hover {
     opacity: 0.6;
   }
 }
-.developer-line a:focus, .link:focus, .social ul a:focus, .btn--outlined:focus, .logo:focus {
+.developer-line a:focus, .link:focus, .social ul a:focus, .btn--outlined:focus, .btn.policy-btn:focus, .logo:focus {
   opacity: 0.6;
 }
 
@@ -215,6 +215,19 @@ img {
   font-size: 16px;
   font-weight: 500;
   margin: 0;
+}
+
+.content-block {
+  display: flex;
+  flex-direction: column;
+}
+.content-block ul,
+.content-block ol {
+  margin: 10px 0;
+  padding-left: 32px;
+}
+.content-block p {
+  margin: 0.5em 0;
 }
 
 .header {
@@ -1032,6 +1045,16 @@ img {
 .btn--anchor svg {
   transform: rotate(90deg);
 }
+.btn.policy-btn {
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  border: none;
+  padding: 0;
+  background: none;
+  color: var(--primary-color);
+}
 
 a.btn {
   padding-top: 18px;
@@ -1368,8 +1391,20 @@ a.btn {
 .affiliate-modal .modal-content .price-list ul li:not(:last-child) {
   border-bottom: 1px solid var(--gray-color);
 }
-.affiliate-modal .modal-content .btn {
+.affiliate-modal .modal-footer .btn {
   max-width: 100%;
+}
+
+.policy-modal {
+  width: fit-content;
+  max-width: 1140px;
+}
+.policy-modal .modal-header .title {
+  font-size: clamp(16px, 5vw, 22px);
+}
+
+.modal-overlay:has(.policy-modal) {
+  z-index: 299;
 }
 
 .input-wrapper input, .input-wrapper input::placeholder, .textarea-wrapper textarea, .textarea-wrapper textarea::placeholder, .checkbox-wrapper label, .checkbox-wrapper label button {

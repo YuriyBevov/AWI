@@ -95,6 +95,18 @@
 			transform: rotate(90deg);
 		}
 	}
+
+	&.policy-btn {
+		font-weight: 400;
+		font-size: 14px;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		border: none;
+		padding: 0;
+		background: none;
+		color: var(--primary-color);
+		@extend %hover-opacity;
+	}
 }
 
 a.btn {

@@ -9049,7 +9049,7 @@ if (burger) {
   };
   burger.addEventListener("click", onClickOpenMenu);
 }
-class Modal {
+const _Modal = class _Modal {
   constructor(modal, options = {}) {
     __publicField(this, "bodyLocker", (bool) => {
       const body = document.querySelector("body");
@@ -9120,6 +9120,7 @@ class Modal {
           ease: "ease-in",
           onComplete: () => {
             this.modal.querySelectorAll("form").forEach((f) => f.reset());
+            _Modal.openModals.delete(this.id);
           }
         }
       );
@@ -9147,6 +9148,10 @@ class Modal {
     });
     __publicField(this, "openModal", (evt) => {
       evt.preventDefault();
+      const isUnderlayed = this.modal.classList.contains("modal--underlayed");
+      if (!isUnderlayed) {
+        _Modal.closeAllModals();
+      }
       if (!this.preventBodyLock) {
         this.bodyLocker(false);
       }
@@ -9162,6 +9167,7 @@ class Modal {
           onComplete: () => {
             this.addListeners();
             this.focusTrap();
+            _Modal.openModals.add(this.id);
             gsapWithCSS.fromTo(
               this.modal,
               {
@@ -9183,6 +9189,10 @@ class Modal {
       );
     });
     __publicField(this, "show", () => {
+      const isUnderlayed = this.modal.classList.contains("modal--underlayed");
+      if (!isUnderlayed) {
+        _Modal.closeAllModals();
+      }
       if (!this.preventBodyLock) {
         this.bodyLocker(true);
       }
@@ -9197,6 +9207,7 @@ class Modal {
           onComplete: () => {
             this.addListeners();
             this.focusTrap();
+            _Modal.openModals.add(this.id);
           }
         }
       );
@@ -9223,6 +9234,7 @@ class Modal {
     this.init();
   }
   init() {
+    this.modal._modalInstance = this;
     if (this.openers) {
       this.isInited = true;
       this.openers.forEach((opener) => {
@@ -9234,7 +9246,21 @@ class Modal {
       );
     }
   }
-}
+};
+__publicField(_Modal, "openModals", /* @__PURE__ */ new Set());
+__publicField(_Modal, "closeAllModals", () => {
+  _Modal.openModals.forEach((modalId) => {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      const modalInstance = modal._modalInstance;
+      if (modalInstance) {
+        modalInstance.refresh();
+      }
+    }
+  });
+  _Modal.openModals.clear();
+});
+let Modal = _Modal;
 const modals = document.querySelectorAll(".modal");
 if (modals) {
   modals.forEach((modal) => {

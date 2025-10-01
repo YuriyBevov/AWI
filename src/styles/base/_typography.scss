@@ -19,3 +19,18 @@
 	font-weight: 500;
 	margin: 0;
 }
+
+.content-block {
+	display: flex;
+	flex-direction: column;
+
+	ul,
+	ol {
+		margin: 10px 0;
+		padding-left: 32px;
+	}
+
+	p {
+		margin: 0.5em 0;
+	}
+}

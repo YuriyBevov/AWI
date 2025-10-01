@@ -160,11 +160,7 @@ export class Modal {
 	openModal = (evt) => {
 		evt.preventDefault();
 
-		const isUnderlayed = this.modal.classList.contains("modal--underlayed");
-
-		if (!isUnderlayed) {
-			Modal.closeAllModals();
-		}
+		Modal.closeAllModals();
 
 		if (!this.preventBodyLock) {
 			this.bodyLocker(false);
@@ -206,11 +202,7 @@ export class Modal {
 	};
 
 	show = () => {
-		const isUnderlayed = this.modal.classList.contains("modal--underlayed");
-
-		if (!isUnderlayed) {
-			Modal.closeAllModals();
-		}
+		Modal.closeAllModals();
 
 		if (!this.preventBodyLock) {
 			this.bodyLocker(true);

@@ -1,0 +1,51 @@
+extends ../../../../layouts/modals/tpl
+
+block variables
+  - modalId = "offer-modal"
+  - modalClasses = "offer-modal"
+  - modalTitle = 'Записаться'
+  - modalPreviewText = ''
+
+block modalContent
+  p.text Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию
+
+  +form({
+    fields: [
+      {
+        type: "text",
+        name: "ФИО родителя",
+        placeholder: "ФИО родителя",
+        required: true 
+      },
+      {
+        type: "text",
+        name: "ФИО ребенка",
+        placeholder: "ФИО ребенка",
+        required: true 
+      },
+
+      {
+        type: "tel",
+        name: "Телефон",
+        placeholder: "Телефон",
+        required: true
+      },
+      {
+        type: "text",
+        name: "Откуда узнали о нас",
+        placeholder: "Откуда узнали о нас",
+      },
+      {
+        type: "text",
+        name: "Филиал",
+        placeholder: "Филиал",
+      },
+      {
+        type: "checkbox",
+        name: "promo-modal-consent",
+        required: true,
+        label: `Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button>`
+      }
+    ],
+    buttonText: "Отправить"
+  })
