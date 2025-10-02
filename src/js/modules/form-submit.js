@@ -5,7 +5,6 @@ if (btns) {
 	btns.forEach((btn) => {
 		btn.addEventListener("click", (evt) => {
 			evt.preventDefault();
-			console.log(evt.target.closest("form"));
 			formValidation(evt.target.closest("form"));
 		});
 	});

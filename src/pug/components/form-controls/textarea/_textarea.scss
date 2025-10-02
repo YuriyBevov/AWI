@@ -1,0 +1,23 @@
+@use "@styles/extends/_form-control-styles.scss";
+@use "@styles/extends/_shaker.scss";
+.textarea-wrapper {
+	textarea {
+		@extend %control-font-styles;
+		@extend %control-base-styles;
+
+		resize: none;
+		min-height: 160px;
+
+		&::placeholder {
+			@extend %control-font-styles;
+		}
+
+		&.invalid-control {
+			border-color: var(--danger-color);
+
+			&::placeholder {
+				color: var(--danger-color);
+			}
+		}
+	}
+}

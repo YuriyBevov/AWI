@@ -1,0 +1,19 @@
+@use "@styles/extends/_form-control-styles.scss";
+@use "@styles/extends/_shaker.scss";
+.input-wrapper {
+	input {
+		@extend %control-font-styles;
+		@extend %control-base-styles;
+
+		&::placeholder {
+			@extend %control-font-styles;
+		}
+	}
+
+	&:has(.invalid-control) label,
+	&:has(.invalid-control) input,
+	&:has(.invalid-control) input::placeholder {
+		border-color: var(--danger-color);
+		color: var(--danger-color);
+	}
+}

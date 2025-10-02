@@ -1,0 +1,33 @@
+.scroll-up-btn {
+	position: fixed;
+	bottom: 100px;
+	right: var(--container-offset);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 20px;
+
+	padding: 6px;
+	border: 2px solid var(--light-color);
+	// border-radius: 50%;
+	background: var(--blue-gradient-color);
+	z-index: 31;
+	transition: opacity var(--main-transition);
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		content: "";
+		width: 18px;
+		height: 18px;
+		background-image: url("@img/up-icon.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}

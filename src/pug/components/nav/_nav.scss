@@ -1,0 +1,140 @@
+@use "@styles/extends/_hover-opacity";
+@use "@styles/base/scoped-vars" as *;
+@use "@styles/mixins/container-queries" as *;
+
+.nav {
+	width: 100%;
+	visibility: hidden;
+	opacity: 0;
+	@include container-up("header", $desktop-view-width) {
+		visibility: revert;
+		opacity: revert;
+	}
+
+	&__wrapper {
+		width: 100%;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 8px 0;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		gap: 16px;
+		border-bottom: 1px solid var(--gray-color);
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+			font-weight: 600;
+			text-align: center;
+			padding: 6px;
+			text-decoration: none;
+			color: var(--primary-color);
+			transition: color var(--main-transition);
+
+			@media (hover: hover) {
+				&:hover {
+					color: var(--primary-light-color);
+				}
+			}
+
+			&:focus {
+				color: var(--primary-light-color);
+			}
+		}
+	}
+
+	&--header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		width: 100%;
+		height: 100vh;
+		height: 100lvh;
+		background: rgba(0, 53, 107, 0.4);
+		backdrop-filter: blur(3px);
+
+		.nav__wrapper {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 90vw;
+			height: 100%;
+			padding: 0 20px;
+			max-width: 420px;
+			display: flex;
+			flex-direction: column;
+			background-color: var(--white-color);
+			overflow: hidden;
+			overflow-y: auto;
+			z-index: 89;
+
+			@include container-up("header", $desktop-view-width) {
+				transform: none !important;
+				& > *:not(.nav__list) {
+					display: none !important;
+				}
+			}
+		}
+
+		.nav__header {
+			display: flex;
+			width: 100%;
+			align-items: center;
+			padding: 20px 0;
+			padding-right: 70px;
+			min-height: 90px;
+		}
+
+		.nav__footer {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 24px;
+			padding-bottom: 40px;
+		}
+
+		.logo {
+			flex-grow: 0;
+			margin-top: 5px;
+			max-width: 140px;
+		}
+
+		.nav__list {
+			flex-direction: column;
+			align-items: flex-start;
+			// margin: 20px 0;
+			border-bottom: none;
+
+			@include container-up("header", $desktop-view-width) {
+				flex-direction: row;
+				// border-bottom: 1px solid var(--gray-color);
+			}
+		}
+
+		@include container-up("header", $desktop-view-width) {
+			all: revert;
+
+			opacity: 1 !important;
+			backdrop-filter: none !important;
+			visibility: visible !important;
+			background-color: transparent !important;
+
+			.nav__wrapper,
+			.nav__header,
+			.nav__footer,
+			.logo {
+				all: revert;
+			}
+		}
+	}
+}

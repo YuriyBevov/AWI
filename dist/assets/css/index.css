@@ -195,6 +195,10 @@ img {
   }
 }
 
+.grecaptcha-badge {
+  z-index: 69;
+}
+
 .title {
   font-size: clamp(32px, 5.2vw, 48px);
   font-weight: 600;
@@ -265,6 +269,8 @@ img {
 @container header (min-width: 720px ) {
   .header__top .btn--anchor {
     display: flex;
+    font-weight: 500;
+    color: var(--secondary-color);
   }
 }
 @container header (min-width: 960px ) {
@@ -369,28 +375,20 @@ img {
 }
 
 .modal {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90dvw;
-  height: fit-content;
-  max-width: 640px;
-  max-height: 85dvh;
-  padding: 5px;
-}
-.modal-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  width: 90dvw;
   height: fit-content;
-  max-height: 90vh;
-  max-height: 90svh;
-  gap: 24px;
-  border-radius: 4px;
-  background-color: var(--white-color);
-  overflow: hidden;
+  max-height: 70%;
+  max-width: 640px;
   padding: 24px;
   border-radius: 20px;
+  background-color: var(--white-color);
 }
 .modal-content {
   display: flex;
@@ -399,7 +397,7 @@ img {
   max-height: 440px;
   overflow: hidden;
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 12px;
 }
 .modal-content::-webkit-scrollbar {
   background-color: var(--gray-color);
@@ -515,6 +513,14 @@ img {
 
 .nav {
   width: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+@container header (min-width: 960px ) {
+  .nav {
+    visibility: revert;
+    opacity: revert;
+  }
 }
 .nav__wrapper {
   width: 100%;
@@ -559,7 +565,7 @@ img {
   gap: 24px;
   width: 100%;
   height: 100vh;
-  height: 100svh;
+  height: 100lvh;
   background: rgba(0, 53, 107, 0.4);
   backdrop-filter: blur(3px);
 }
@@ -1309,7 +1315,7 @@ a.btn {
 
 .scroll-up-btn {
   position: fixed;
-  bottom: 30px;
+  bottom: 100px;
   right: var(--container-offset);
   display: flex;
   align-items: center;
@@ -1432,16 +1438,20 @@ a.btn {
 
 @keyframes shaker {
   20% {
-    transform: translateX(8px);
+    color: var(--danger-color);
+    border-color: var(--danger-color);
   }
   40% {
-    transform: translateX(-8px);
+    color: revert;
+    border-color: revert;
   }
   60% {
-    transform: translateX(8px);
+    color: var(--danger-color);
+    border-color: var(--danger-color);
   }
   80% {
-    transform: translateX(-8px);
+    color: revert;
+    border-color: revert;
   }
 }
 .checkbox-wrapper {
@@ -1494,9 +1504,6 @@ a.btn {
 .checkbox-wrapper:has(.invalid-control) label {
   color: var(--danger-color);
 }
-.checkbox-wrapper:has(.invalid-control.shaker) label {
-  animation: shaker var(--main-transition);
-}
 
 .textarea-wrapper textarea {
   resize: none;
@@ -1508,16 +1515,10 @@ a.btn {
 .textarea-wrapper textarea.invalid-control::placeholder {
   color: var(--danger-color);
 }
-.textarea-wrapper textarea.invalid-control.shaker {
-  animation: shaker var(--main-transition);
-}
 
 .input-wrapper:has(.invalid-control) label, .input-wrapper:has(.invalid-control) input, .input-wrapper:has(.invalid-control) input::placeholder {
   border-color: var(--danger-color);
   color: var(--danger-color);
-}
-.input-wrapper:has(.invalid-control.shaker) {
-  animation: shaker var(--main-transition);
 }
 
 .form {
@@ -1786,7 +1787,7 @@ a.btn {
 .reviews .grid iframe {
   width: 100%;
   height: 100%;
-  min-height: 560px;
+  min-height: 640px;
   padding: 24px;
   border: 2px solid var(--gray-color);
   border-radius: 30px;

@@ -5,7 +5,6 @@
 	position: sticky;
 	top: 0;
 	z-index: 99;
-	// padding-bottom: 20px;
 	background-color: var(--white-color);
 	container: header / inline-size;
 
@@ -41,6 +40,8 @@
 		@include container-up("header", 720px) {
 			.btn--anchor {
 				display: flex;
+				font-weight: 500;
+				color: var(--secondary-color);
 			}
 		}
 

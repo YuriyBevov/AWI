@@ -1,0 +1,45 @@
+mixin nav(data)
+  nav.nav(class=data.cls ? data.cls : null)
+    .nav__wrapper
+      if data.type === 'main-menu'
+        .nav__header
+          a(href="/").logo
+            img(src="./assets/img/logo.svg" alt="logo")
+      ul.nav__list
+        each item in data.items
+          li.nav__list-item
+            a.nav__list-link(href=item.link)= item.text
+      
+
+      if data.type === 'main-menu'
+        .nav__footer
+          +social({
+            items: [
+              {
+                link: "#",
+                icon: "./assets/img/tg-filled-icon.png",
+                alt: "telegram"
+              },
+              {
+                link: "#",
+                icon: "./assets/img/whatsapp-filled-icon.png",
+                alt: "whatsapp"
+              },
+              {
+                link: "#",
+                icon: "./assets/img/mail-filled-icon.png",
+                alt: "E-mail"
+              }
+            ]
+          })
+
+          +link({
+            href: "tel:88002006655",
+            text: "8 (800) 200 66 55",
+            cls: "link--bolder"
+          })
+
+          +mainBtn({
+            text: "Обратный звонок",
+            modalID: "callback-modal"
+          })

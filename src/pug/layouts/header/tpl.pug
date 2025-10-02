@@ -1,8 +1,8 @@
-include ../../mixins/components/social/tpl.pug
-include ../../mixins/components/main-btn/tpl.pug
-include ../../mixins/components/link/tpl.pug
-include ../../mixins/components/company-info/tpl.pug
-include ../../mixins/components/nav/tpl.pug
+include ../../components/social/tpl.pug
+include ../../components/main-btn/tpl.pug
+include ../../components/link/tpl.pug
+include ../../components/company-info/tpl.pug
+include ../../components/nav/tpl.pug
 
 
 header.header
@@ -12,7 +12,7 @@ header.header
         tag: "a",
         text: "Филиалы",
         href: "#affiliates",
-        cls: "btn--outlined btn--anchor",
+        cls: "btn--outlined btn--anchor", 
         isIconed: true
       })
       
@@ -23,17 +23,17 @@ header.header
         items: [
           {
             link: "#",
-            icon: "./assets/img/tg-filled-icon.png",
+            icon: "./assets/img/tg-filled-icon.svg",
             alt: "telegram"
           },
           {
             link: "#",
-            icon: "./assets/img/whatsapp-filled-icon.png",
+            icon: "./assets/img/whatsapp-filled-icon.svg",
             alt: "whatsapp"
           },
           {
-            link: "#",
-            icon: "./assets/img/mail-filled-icon.png",
+            link: "mailto:info@aquacademy.ru",
+            icon: "./assets/img/mail-filled-icon.svg",
             alt: "E-mail"
           }
         ]
@@ -50,7 +50,7 @@ header.header
         modalID: "callback-modal"
       })
 
-      include ../../mixins/components/burger/tpl.pug
+      include ../../components/burger/tpl.pug
     
     .header__bottom
       +nav({

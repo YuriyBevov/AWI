@@ -1,0 +1,19 @@
+extends ../../../layouts/modals/tpl
+include ../../main-btn/tpl.pug
+
+block variables
+  - modalId = "affiliate-modal"
+  - modalClasses = "affiliate-modal"
+  - modalTitle = ''
+  - modalPreviewText = ''
+  - showFooter = true
+
+block modalContent
+
+block modalFooter
+  +mainBtn({
+    text: 'Записаться',
+    modalID: 'offer-modal'
+  })
+ 
+  

@@ -9,8 +9,8 @@ block variables
   - sectionHeaderSide = ''
   - sectionID = ''
 
-include ../../mixins/components/label/tpl.pug
-include ../../mixins/components/main-btn/tpl.pug
+include ../../components/label/tpl.pug
+include ../../components/main-btn/tpl.pug
 
 section.section(class= sectionClass id= sectionID)
   .container(class= sectionContainerClass)
@@ -36,7 +36,7 @@ section.section(class= sectionClass id= sectionID)
       if sectionHeaderSide
         .section__header-side-container
           .section__header-side
-            include ../../mixins/components/info-card/tpl.pug
+            include ../../components/info-card/tpl.pug
             +info-card({
               strong: '15+',
               text: 'лет опыта обучения различным водным искусствам.'

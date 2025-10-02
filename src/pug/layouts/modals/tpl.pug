@@ -2,19 +2,23 @@ block variables
   - modalId = ''
   - modalClasses = ''
   - modalTitle = ''
+  - showFooter = false
 
 .modal-overlay
   .modal.main-modal(id= modalId class= modalClasses)
-    .modal-wrapper
-      .modal-header
-        span.title= modalTitle
-        
-        button(type="button" aria-label="Закрыть").modal-closer
-          svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-            use(xlink:href="./assets/sprite.svg#close")
+    //- .modal-wrapper
+    .modal-header
+      span.title= modalTitle
+      
+      button(type="button" aria-label="Закрыть").modal-closer
+        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+          use(xlink:href="./assets/sprite.svg#close")
 
-      .modal-content
-        block modalContent
+    .modal-content
+      block modalContent
 
+    if (showFooter)
       .modal-footer
         block modalFooter
+
+- showFooter = ''

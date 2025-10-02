@@ -1,17 +1,21 @@
 @keyframes shaker {
 	20% {
-		transform: translateX(8px);
+		color: var(--danger-color);
+		border-color: var(--danger-color);
 	}
 
 	40% {
-		transform: translateX(-8px);
+		color: revert;
+		border-color: revert;
 	}
 
 	60% {
-		transform: translateX(8px);
+		color: var(--danger-color);
+		border-color: var(--danger-color);
 	}
 
 	80% {
-		transform: translateX(-8px);
+		color: revert;
+		border-color: revert;
 	}
 }

@@ -1,0 +1,20 @@
+include ../form-controls/checkbox/tpl.pug
+include ../form-controls/textarea/tpl.pug
+include ../form-controls/input/tpl.pug
+
+mixin form(data)
+  form.form(action="/public/mail.php" method="POST" class= data.cls)
+    input(type="hidden" name="recaptcha" class="g-recaptcha-response" value="")
+    input(type="hidden" name="Заполненная форма" value="TEST")
+
+    each field in data.fields
+      case field.type
+        when "checkbox"
+          +checkbox(field)
+        when "textarea"
+          +textarea(field)
+        default
+          +input(field)
+
+    button.btn(type="submit")
+      span!= data.buttonText

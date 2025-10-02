@@ -1,8 +1,8 @@
-include ../../mixins/components/social/tpl.pug
-include ../../mixins/components/main-btn/tpl.pug
-include ../../mixins/components/link/tpl.pug
-include ../../mixins/components/company-info/tpl.pug
-include ../../mixins/components/nav/tpl.pug
+include ../../components/social/tpl.pug
+include ../../components/main-btn/tpl.pug
+include ../../components/link/tpl.pug
+include ../../components/company-info/tpl.pug
+include ../../components/nav/tpl.pug
 
 footer.footer
   .container
@@ -41,17 +41,17 @@ footer.footer
         items: [
           {
             link: "#",
-            icon: "./assets/img/tg-filled-icon.png",
+            icon: "./assets/img/tg-filled-icon.svg",
             alt: "telegram"
           },
           {
             link: "#",
-            icon: "./assets/img/whatsapp-filled-icon.png",
+            icon: "./assets/img/whatsapp-filled-icon.svg",
             alt: "whatsapp"
           },
           {
-            link: "#",
-            icon: "./assets/img/mail-filled-icon.png",
+            link: "mailto:info@aquacademy.ru",
+            icon: "./assets/img/mail-filled-icon.svg",
             alt: "E-mail"
           }
         ]
@@ -90,7 +90,7 @@ footer.footer
         //-   text: "Политика конфиденциальности",
         //-   cls: "link--underlined link--size-xs"
         //- })
-    include ../../mixins/components/developer/tpl.pug
+    include ../../components/developer/tpl.pug
     
 
 

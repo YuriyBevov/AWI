@@ -18,32 +18,32 @@
 
 // Mixins and components
 
-@use "@pug/mixins/components/burger/_burger.scss";
-@use "@pug/mixins/components/nav/_nav.scss";
-@use "@pug/mixins/components/label/_label.scss";
-@use "@pug/mixins/components/features-row/_features-row.scss";
-@use "@pug/mixins/components/staff-preview-card/_staff-preview-card.scss";
-@use "@pug/mixins/components/vacancy-card/_vacancy-card.scss";
-@use "@pug/mixins/components/course-card/_course-card.scss";
-@use "@pug/mixins/components/info-card/_info-card.scss";
-@use "@pug/mixins/components/main-btn/_main-btn.scss";
-@use "@pug/mixins/components/base-slider/_base-slider.scss";
-@use "@pug/mixins/components/switcher/_switcher.scss";
-@use "@pug/mixins/components/schedule-card/_schedule-card.scss";
-@use "@pug/mixins/components/social/_social.scss";
-@use "@pug/mixins/components/link/_link.scss";
-@use "@pug/mixins/components/company-info/_company-info.scss";
-@use "@pug/mixins/components/developer/_developer.scss";
-@use "@pug/mixins/components/scroll-up-btn/_scroll-up-btn.scss";
-@use "@pug/mixins/components/modals/staff-preview-modal/_staff-preview-modal.scss";
-@use "@pug/mixins/components/modals/affiliate-modal/_affiliate-modal.scss";
-@use "@pug/mixins/components/modals/policy-modal/_policy-modal.scss";
-// @use "@pug/mixins/components/modals/offer-modal/_offer-modal.scss";
-@use "@pug/mixins/components/form-controls/checkbox/_checkbox.scss";
-@use "@pug/mixins/components/form-controls/textarea/_textarea.scss";
-@use "@pug/mixins/components/form-controls/input/_input.scss";
-@use "@pug/mixins/components/form/_form.scss";
-@use "@pug/mixins/components/loader/_loader.scss";
+@use "@pug/components/burger/_burger.scss";
+@use "@pug/components/nav/_nav.scss";
+@use "@pug/components/label/_label.scss";
+@use "@pug/components/features-row/_features-row.scss";
+@use "@pug/components/staff-preview-card/_staff-preview-card.scss";
+@use "@pug/components/vacancy-card/_vacancy-card.scss";
+@use "@pug/components/course-card/_course-card.scss";
+@use "@pug/components/info-card/_info-card.scss";
+@use "@pug/components/main-btn/_main-btn.scss";
+@use "@pug/components/base-slider/_base-slider.scss";
+@use "@pug/components/switcher/_switcher.scss";
+@use "@pug/components/schedule-card/_schedule-card.scss";
+@use "@pug/components/social/_social.scss";
+@use "@pug/components/link/_link.scss";
+@use "@pug/components/company-info/_company-info.scss";
+@use "@pug/components/developer/_developer.scss";
+@use "@pug/components/scroll-up-btn/_scroll-up-btn.scss";
+@use "@pug/components/modals/staff-preview-modal/_staff-preview-modal.scss";
+@use "@pug/components/modals/affiliate-modal/_affiliate-modal.scss";
+@use "@pug/components/modals/policy-modal/_policy-modal.scss";
+// @use "@pug/components/modals/offer-modal/_offer-modal.scss";
+@use "@pug/components/form-controls/checkbox/_checkbox.scss";
+@use "@pug/components/form-controls/textarea/_textarea.scss";
+@use "@pug/components/form-controls/input/_input.scss";
+@use "@pug/components/form/_form.scss";
+@use "@pug/components/loader/_loader.scss";
 
 // Sections
 @use "@pug/sections/hero/_hero.scss";
