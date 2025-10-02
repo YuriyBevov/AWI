@@ -9170,6 +9170,14 @@ const _Modal = class _Modal {
     });
     __publicField(this, "openModal", (evt) => {
       evt.preventDefault();
+      const affiliate = evt.currentTarget.getAttribute("data-affiliate");
+      if (affiliate) {
+        document.querySelector("#affiliate-modal").querySelector("[data-name]").value = affiliate;
+      }
+      const program = evt.currentTarget.getAttribute("data-program");
+      if (program) {
+        this.modal.querySelector("[data-name]").value = program;
+      }
       const isUnderlayed = this.modal.classList.contains("modal--underlayed");
       if (!isUnderlayed) {
         _Modal.closeAllModals();
@@ -9308,13 +9316,13 @@ document.addEventListener("click", function(evt) {
   modalContentContainer.appendChild(modalContent);
 });
 document.addEventListener("click", function(evt) {
-  const opener = evt.target.closest('[data-modal-opener="affiliate-modal"]');
+  const opener = evt.target.closest('[data-modal-opener="cost-modal"]');
   if (!opener) return;
   const card = opener.closest(".schedule-card");
   const container = card.parentElement;
-  const template = container.querySelector("template#affiliate-modal-tpl");
+  const template = container.querySelector("template#cost-modal-tpl");
   const modalContent = template.content.cloneNode(true);
-  const modal = document.getElementById("affiliate-modal");
+  const modal = document.getElementById("cost-modal");
   const modalContentContainer = modal.querySelector(".modal-content");
   const modalHeaderTitle = modal.querySelector(".modal-header span.title");
   if (modalHeaderTitle && template.hasAttribute("data-title")) {

@@ -1,19 +1,61 @@
 extends ../../../layouts/modals/tpl
-include ../../main-btn/tpl.pug
 
 block variables
   - modalId = "affiliate-modal"
   - modalClasses = "affiliate-modal"
-  - modalTitle = ''
+  - modalTitle = 'Записаться'
   - modalPreviewText = ''
-  - showFooter = true
 
 block modalContent
+  p.text Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию
 
-block modalFooter
-  +mainBtn({
-    text: 'Записаться',
-    modalID: 'offer-modal'
+  +form({
+    fields: [
+      {
+        type: "form-data-hidden",
+        value: "Записаться в филиал"
+      },
+      {
+        type: "form-data-hidden",
+        name: "Выбранный филиал",
+        dataName: "affiliate",
+        value: ""
+      },
+      {
+        type: "text",
+        name: "ФИО родителя",
+        placeholder: "ФИО родителя*",
+        required: true 
+      },
+      {
+        type: "text",
+        name: "ФИО ребенка",
+        placeholder: "ФИО ребенка",
+      },
+
+      {
+        type: "tel",
+        name: "Телефон",
+        placeholder: "Телефон*",
+        required: true
+      },
+      {
+        type: "text",
+        name: "Откуда узнали о нас",
+        placeholder: "Откуда узнали о нас",
+      },
+      {
+        type: "text",
+        name: "Филиал",
+        placeholder: "Филиал",
+      },
+      {
+        type: "checkbox",
+        name: "Согласие на обработку персональных данных",
+        id: "offer-modal-consent",
+        required: true,
+        label: `Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button>*`
+      }
+    ],
+    buttonText: "Отправить",
   })
- 
-  

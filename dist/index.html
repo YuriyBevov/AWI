@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index.pug-Cbc8o9su.js"></script>
+    <script type="module" crossorigin src="./assets/index.pug-C17aoi7n.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/css/index.css">
   </head>
   <body>
@@ -248,10 +248,10 @@
                             <div class="workday-label">Чт</div>
                             <div class="workday-label active">Пт</div>
                           </div><span class="subtitle">Среда/пятница 17:00-17:45 вода, 18:00-18:45 зал</span>
-                                    <button class="btn" data-modal-opener="affiliate-modal"><span>Узнать стоимость</span>
+                                    <button class="btn" data-modal-opener="cost-modal" data-affiliate="Бассейн «Чайковский»"><span>Узнать стоимость</span>
                                     </button>
                         </div>
-                        <template id="affiliate-modal-tpl" data-title="Стоимость занятий">
+                        <template id="cost-modal-tpl" data-title="Стоимость занятий">
                           <p class="text">Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию</p><span class="title">Бассейн «Чайковский»</span>
                           <div class="price-list">
                             <ul>
@@ -283,10 +283,10 @@
                             <div class="workday-label">Чт</div>
                             <div class="workday-label active">Пт</div>
                           </div><span class="subtitle">Среда 15:30-16:15 вода, 16:30-17:15 зал.<br>Воскресенье 17:30-18:15 зал, 18:30-19:15 вода.</span>
-                                    <button class="btn" data-modal-opener="affiliate-modal"><span>Узнать стоимость</span>
+                                    <button class="btn" data-modal-opener="cost-modal" data-affiliate="Бассейн «Бейт-Швидлер»"><span>Узнать стоимость</span>
                                     </button>
                         </div>
-                        <template id="affiliate-modal-tpl" data-title="Стоимость занятий">
+                        <template id="cost-modal-tpl" data-title="Стоимость занятий">
                           <p class="text">Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию</p><span class="title">Бассейн «Бейт-Швидлер»</span>
                           <div class="price-list">
                             <ul>
@@ -353,7 +353,7 @@
                                           <div class="course-card-container">
                                             <div class="course-card">
                                               <div class="course-card__content"><span class="title">Дети школьного возраста</span><span class="text">- Общая физическая подготовка</span><span class="text">- Растяжка</span><span class="subtitle">Стоимость программы:<br> от <span>11 000*</span> рублей</span><small class="text">*Окончательную стоимость рассчитает менеджер после звонка</small>
-                                                      <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
+                                                      <button class="btn" data-modal-opener="offer-modal" data-program="Дети школьного возраста"><span>Записаться</span>
                                                       </button>
                                               </div><img src="./assets/img/program_1.png" width="235" height="270">
                                             </div>
@@ -363,7 +363,7 @@
                                           <div class="course-card-container">
                                             <div class="course-card">
                                               <div class="course-card__content"><span class="title">Дети дошкольного возраста</span><span class="text">- Развивающая гимнастика</span><span class="subtitle">Стоимость программы:<br> от <span> 6 000</span> рублей</span>
-                                                      <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
+                                                      <button class="btn" data-modal-opener="offer-modal" data-program="Дети дошкольного возраста"><span>Записаться</span>
                                                       </button>
                                               </div><img src="./assets/img/program_2.png" width="235" height="270">
                                             </div>
@@ -481,7 +481,7 @@
             </div>
                   <form class="form" action="/public/mail.php" method="POST">
                     <input class="g-recaptcha-response" type="hidden" name="recaptcha" value="">
-                    <input type="hidden" name="Заполненная форма" value="TEST">
+                    <input type="hidden" name="Заполненная форма" value="Нужна помощь?">
                           <div class="input-wrapper">
                             <label>
                               <input class="input" type="text" name="name" data-required placeholder="Имя">
@@ -559,7 +559,7 @@
       </div>
     </div>
     <div class="modal-overlay">
-      <div class="modal main-modal affiliate-modal" id="affiliate-modal">
+      <div class="modal main-modal cost-modal" id="cost-modal">
         <div class="modal-header"><span class="title"></span>
           <button class="modal-closer" type="button" aria-label="Закрыть">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -569,7 +569,7 @@
         </div>
         <div class="modal-content"></div>
         <div class="modal-footer">
-              <button class="btn" data-modal-opener="offer-modal"><span>Записаться</span>
+              <button class="btn" data-modal-opener="affiliate-modal"><span>Записаться</span>
               </button>
         </div>
       </div>
@@ -615,7 +615,7 @@
           <p class="text">Свяжитесь с нами и мы ответим на все интересующие Вас вопросы.</p>
                 <form class="form" action="/public/mail.php" method="POST">
                   <input class="g-recaptcha-response" type="hidden" name="recaptcha" value="">
-                  <input type="hidden" name="Заполненная форма" value="TEST">
+                  <input type="hidden" name="Заполненная форма" value="Обратный звонок">
                         <div class="input-wrapper">
                           <label>
                             <input class="input" type="text" name="Имя" data-required placeholder="Имя">
@@ -647,7 +647,7 @@
         <div class="modal-content">
                 <form class="form" action="/public/mail.php" method="POST">
                   <input class="g-recaptcha-response" type="hidden" name="recaptcha" value="">
-                  <input type="hidden" name="Заполненная форма" value="TEST">
+                  <input type="hidden" name="Заполненная форма" value="Запись на бесплатное занятие">
                         <div class="input-wrapper">
                           <label>
                             <input class="input" type="text" name="Имя" data-required placeholder="Имя">
@@ -680,7 +680,7 @@
           <p class="text">Пишите, мы с радостью проконсультируем Вас!</p>
                 <form class="form" action="/public/mail.php" method="POST">
                   <input class="g-recaptcha-response" type="hidden" name="recaptcha" value="">
-                  <input type="hidden" name="Заполненная форма" value="TEST">
+                  <input type="hidden" name="Заполненная форма" value="Уточнить расписание">
                         <div class="input-wrapper">
                           <label>
                             <input class="input" type="text" name="Имя" data-required placeholder="Имя">
@@ -755,7 +755,8 @@
           <p class="text">Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию</p>
                 <form class="form" action="/public/mail.php" method="POST">
                   <input class="g-recaptcha-response" type="hidden" name="recaptcha" value="">
-                  <input type="hidden" name="Заполненная форма" value="TEST">
+                  <input type="hidden" name="Заполненная форма" value="Записать ребенка на онлайн обучение">
+                  <input type="hidden" name="Выбранная программа" value="" data-name="program">
                         <div class="input-wrapper">
                           <label>
                             <input class="input" type="text" name="ФИО родителя" data-required placeholder="ФИО родителя">
@@ -776,6 +777,50 @@
                             <input class="input" type="text" name="Откуда узнали о нас" placeholder="Откуда узнали о нас">
                           </label>
                         </div>
+                        <div class="checkbox-wrapper">
+                          <input type="checkbox" id="offer-modal-consent" name="Согласие на обработку персональных данных" data-required>
+                          <label for="offer-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
+                        </div>
+                  <button class="btn" type="submit"><span>Отправить</span></button>
+                </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal main-modal affiliate-modal" id="affiliate-modal">
+        <div class="modal-header"><span class="title">Записаться</span>
+          <button class="modal-closer" type="button" aria-label="Закрыть">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="./assets/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-content">
+          <p class="text">Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию</p>
+                <form class="form" action="/public/mail.php" method="POST">
+                  <input class="g-recaptcha-response" type="hidden" name="recaptcha" value="">
+                  <input type="hidden" name="Заполненная форма" value="Записаться в филиал">
+                  <input type="hidden" name="Выбранный филиал" value="" data-name="affiliate">
+                        <div class="input-wrapper">
+                          <label>
+                            <input class="input" type="text" name="ФИО родителя" data-required placeholder="ФИО родителя*">
+                          </label>
+                        </div>
+                        <div class="input-wrapper">
+                          <label>
+                            <input class="input" type="text" name="ФИО ребенка" placeholder="ФИО ребенка">
+                          </label>
+                        </div>
+                        <div class="input-wrapper">
+                          <label>
+                            <input class="input" type="tel" name="Телефон" data-required placeholder="Телефон*">
+                          </label>
+                        </div>
+                        <div class="input-wrapper">
+                          <label>
+                            <input class="input" type="text" name="Откуда узнали о нас" placeholder="Откуда узнали о нас">
+                          </label>
+                        </div>
                         <div class="input-wrapper">
                           <label>
                             <input class="input" type="text" name="Филиал" placeholder="Филиал">
@@ -783,7 +828,7 @@
                         </div>
                         <div class="checkbox-wrapper">
                           <input type="checkbox" id="offer-modal-consent" name="Согласие на обработку персональных данных" data-required>
-                          <label for="offer-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
+                          <label for="offer-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button>*</label>
                         </div>
                   <button class="btn" type="submit"><span>Отправить</span></button>
                 </form>
@@ -803,7 +848,7 @@
           <p class="text">Присоединейся к нам и помоги вдохновить будущее поколение на спортивные достижения в водных искусствах.</p>
                 <form class="form" action="/public/mail.php" method="POST">
                   <input class="g-recaptcha-response" type="hidden" name="recaptcha" value="">
-                  <input type="hidden" name="Заполненная форма" value="TEST">
+                  <input type="hidden" name="Заполненная форма" value="Отклик на вакансию">
                         <div class="input-wrapper">
                           <label>
                             <input class="input" type="text" name="Имя" data-required placeholder="Имя">
@@ -825,8 +870,8 @@
                           </label>
                         </div>
                         <div class="checkbox-wrapper">
-                          <input type="checkbox" name="Согласие на обработку персональных данных" data-required>
-                          <label>Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
+                          <input type="checkbox" id="vacancy-modal-consent" name="Согласие на обработку персональных данных" data-required>
+                          <label for="vacancy-modal-consent">Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button></label>
                         </div>
                   <button class="btn" type="submit"><span>Отправить</span></button>
                 </form>

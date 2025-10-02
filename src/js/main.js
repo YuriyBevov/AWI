@@ -4,6 +4,6 @@ import "../pug/components/scroll-up-btn/scroll-up-btn";
 import "../pug/components/burger/burger";
 import "./modules/modals";
 import "../pug/components/modals/staff-preview-modal/staff-preview-modal";
-import "../pug/components/modals/affiliate-modal/affiliate-modal";
+import "../pug/components/modals/cost-modal/cost-modal";
 import "./modules/mask";
 import "./modules/form-submit";

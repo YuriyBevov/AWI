@@ -1353,51 +1353,51 @@ a.btn {
   font-weight: 500;
 }
 
-.affiliate-modal {
+.cost-modal {
   max-width: 480px;
 }
-.affiliate-modal .modal-content .title {
+.cost-modal .modal-content .title {
   font-size: 24px;
 }
-.affiliate-modal .modal-content .price-list ul {
+.cost-modal .modal-content .price-list ul {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.affiliate-modal .modal-content .price-list ul li {
+.cost-modal .modal-content .price-list ul li {
   display: flex;
   flex-direction: column;
   gap: 4px 24px;
   padding: 16px 0;
 }
 @media (min-width: 420px) {
-  .affiliate-modal .modal-content .price-list ul li {
+  .cost-modal .modal-content .price-list ul li {
     flex-direction: row;
     align-items: center;
   }
 }
-.affiliate-modal .modal-content .price-list ul li span {
+.cost-modal .modal-content .price-list ul li span {
   font-size: 14px;
   flex-basis: calc(50% - 12px);
 }
-.affiliate-modal .modal-content .price-list ul li span:first-child {
+.cost-modal .modal-content .price-list ul li span:first-child {
   margin-right: auto;
 }
-.affiliate-modal .modal-content .price-list ul li span:last-child {
+.cost-modal .modal-content .price-list ul li span:last-child {
   font-weight: 700;
   white-space: nowrap;
 }
 @media (min-width: 420px) {
-  .affiliate-modal .modal-content .price-list ul li span:last-child {
+  .cost-modal .modal-content .price-list ul li span:last-child {
     text-align: right;
   }
 }
-.affiliate-modal .modal-content .price-list ul li:not(:last-child) {
+.cost-modal .modal-content .price-list ul li:not(:last-child) {
   border-bottom: 1px solid var(--gray-color);
 }
-.affiliate-modal .modal-footer .btn {
+.cost-modal .modal-footer .btn {
   max-width: 100%;
 }
 

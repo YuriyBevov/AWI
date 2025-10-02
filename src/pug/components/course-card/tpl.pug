@@ -12,7 +12,8 @@ mixin course-card(data)
           small.text!= '*' + data.note 
         +mainBtn({
           text: 'Записаться',
-          modalID: 'offer-modal'
+          modalID: 'offer-modal',
+          dataProgram: data.title ? data.title : ''
         })
         
       img(src= data.image alt= data.name width="235" height="270")

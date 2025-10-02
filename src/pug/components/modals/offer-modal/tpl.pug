@@ -12,6 +12,16 @@ block modalContent
   +form({
     fields: [
       {
+        type: "form-data-hidden",
+        value: "Записать ребенка на онлайн обучение"
+      },
+      {
+        type: "form-data-hidden",
+        name: "Выбранная программа",
+        dataName: "program",
+        value: ""
+      },
+      {
         type: "text",
         name: "ФИО родителя",
         placeholder: "ФИО родителя",
@@ -35,11 +45,7 @@ block modalContent
         name: "Откуда узнали о нас",
         placeholder: "Откуда узнали о нас",
       },
-      {
-        type: "text",
-        name: "Филиал",
-        placeholder: "Филиал",
-      },
+
       {
         type: "checkbox",
         name: "Согласие на обработку персональных данных",
@@ -48,5 +54,5 @@ block modalContent
         label: `Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button>`
       }
     ],
-    buttonText: "Отправить"
+    buttonText: "Отправить",
   })

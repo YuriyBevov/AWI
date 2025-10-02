@@ -5,10 +5,11 @@ include ../form-controls/input/tpl.pug
 mixin form(data)
   form.form(action="/public/mail.php" method="POST" class= data.cls)
     input(type="hidden" name="recaptcha" class="g-recaptcha-response" value="")
-    input(type="hidden" name="Заполненная форма" value="TEST")
 
     each field in data.fields
       case field.type
+        when "form-data-hidden"
+          input(type="hidden" name=field.name ? field.name : "Заполненная форма" value= field.value data-name=field.dataName)
         when "checkbox"
           +checkbox(field)
         when "textarea"

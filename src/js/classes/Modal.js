@@ -160,6 +160,19 @@ export class Modal {
 	openModal = (evt) => {
 		evt.preventDefault();
 
+		const affiliate = evt.currentTarget.getAttribute("data-affiliate");
+
+		if (affiliate) {
+			document
+				.querySelector("#affiliate-modal")
+				.querySelector("[data-name]").value = affiliate;
+		}
+
+		const program = evt.currentTarget.getAttribute("data-program");
+		if (program) {
+			this.modal.querySelector("[data-name]").value = program;
+		}
+
 		const isUnderlayed = this.modal.classList.contains("modal--underlayed");
 
 		if (!isUnderlayed) {

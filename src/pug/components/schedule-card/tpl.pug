@@ -13,10 +13,11 @@ mixin schedule-card(data)
       span.subtitle!=  data.worktime
       +mainBtn({
         text: 'Узнать стоимость',
-        modalID: 'affiliate-modal'
+        modalID: 'cost-modal',
+        dataAffiliate: data.title ? data.title : ''
       })
 
-    template(id='affiliate-modal-tpl' data-title="Стоимость занятий")
+    template(id='cost-modal-tpl' data-title="Стоимость занятий")
       p.text Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию
       span.title!= data.title
 

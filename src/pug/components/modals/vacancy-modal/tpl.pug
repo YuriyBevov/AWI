@@ -12,6 +12,10 @@ block modalContent
   +form({
     fields: [
       {
+        type: "form-data-hidden",
+        value: "Отклик на вакансию"
+      },
+      {
         type: "text",
         name: "Имя",
         placeholder: "Имя",
@@ -38,6 +42,7 @@ block modalContent
       {
         type: "checkbox",
         name: "Согласие на обработку персональных данных",
+        id: "vacancy-modal-consent",
         required: true,
         label: `Я согласен с условиями обработки <button type="button" data-modal-opener="policy-modal" class="link link--underlined">персональных данных</button>`
       }
