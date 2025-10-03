@@ -8835,6 +8835,10 @@ window.addEventListener("load", () => {
   btn.setAttribute("aria-label", "В начало страницы");
   document.body.append(btn);
   let isActive = false;
+  gsapWithCSS.set(btn, {
+    y: "150px",
+    opacity: 0
+  });
   window.addEventListener("scroll", () => {
     const viewportHeight = document.documentElement.clientHeight;
     if (window.scrollY > viewportHeight * 1.3) {
@@ -8843,10 +8847,12 @@ window.addEventListener("load", () => {
         gsapWithCSS.fromTo(
           btn,
           {
-            y: "150px"
+            y: "150px",
+            opacity: 0
           },
           {
             y: "0",
+            opacity: 1,
             duration: 0.7,
             ease: "back"
           }
@@ -8858,10 +8864,12 @@ window.addEventListener("load", () => {
         gsapWithCSS.fromTo(
           btn,
           {
-            y: "0"
+            y: "0",
+            opacity: 1
           },
           {
             y: "150px",
+            opacity: 0,
             duration: 0.5,
             ease: "linear"
           }

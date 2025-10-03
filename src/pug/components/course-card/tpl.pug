@@ -16,4 +16,13 @@ mixin course-card(data)
           dataProgram: data.title ? data.title : ''
         })
         
-      img(src= data.image alt= data.name width="235" height="270")
+      picture
+        source(
+          srcset= data.image.replace('.jpg', '@2x.webp').replace('.png', '@2x.webp').replace('.jpeg', '@2x.webp') + ' 2x, ' + data.image.replace('.jpg', '.webp').replace('.png', '.webp').replace('.jpeg', '.webp') + ' 1x'
+          type="image/webp"
+        )
+        source(
+          srcset= data.image.replace('.jpg', '@2x.jpg').replace('.png', '@2x.png').replace('.jpeg', '@2x.jpeg') + ' 2x, ' + data.image + ' 1x'
+          type="image/jpeg"
+        )
+        img(src= data.image alt= data.title width="235" height="270")

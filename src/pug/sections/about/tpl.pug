@@ -12,6 +12,12 @@ block variables
 block content
   .img-grid-container
     .img-grid
-      img(src="./assets/img/about-img-1.png" alt="О нас фото 1" width="560" height="280")
-      img(src="./assets/img/about-img-2.png" alt="О нас фото 2" width="560" height="280")
+      picture
+        source(srcset="./assets/img/about-img-1@2x.webp 2x, ./assets/img/about-img-1.webp 1x", type="image/webp")
+        source(srcset="./assets/img/about-img-1@2x.png 2x, ./assets/img/about-img-1.png 1x", type="image/png")
+        img(src="./assets/img/about-img-1.png" alt="О нас фото 1" width="560" height="280")
+      picture
+        source(srcset="./assets/img/about-img-2@2x.webp 2x, ./assets/img/about-img-2.webp 1x", type="image/webp")
+        source(srcset="./assets/img/about-img-2@2x.png 2x, ./assets/img/about-img-2.png 1x", type="image/png")
+        img(src="./assets/img/about-img-2.png" alt="О нас фото 2" width="560" height="280")
 

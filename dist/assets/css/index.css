@@ -184,6 +184,7 @@ address {
 picture,
 img {
   display: flex;
+  width: 100%;
 }
 
 .section {
@@ -513,6 +514,8 @@ img {
 
 .nav {
   width: 100%;
+}
+.nav:not(.nav--footer) {
   visibility: hidden;
   opacity: 0;
 }
@@ -531,7 +534,6 @@ img {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-around;
   width: 100%;
   gap: 16px;
   border-bottom: 1px solid var(--gray-color);
@@ -540,7 +542,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
   padding: 6px;
@@ -636,6 +638,12 @@ img {
   .nav--header .logo {
     all: revert;
   }
+}
+.nav--footer .nav__list {
+  justify-content: space-around;
+}
+.nav--footer .nav__list a {
+  font-size: 16px;
 }
 
 .label-row {
@@ -1171,7 +1179,7 @@ a.btn {
   width: 100%;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 1.8s ease, visibility 0.3s ease;
+  transition: opacity 1.8s ease;
   z-index: -1;
 }
 .switch-item.active {
@@ -1647,7 +1655,10 @@ a.btn {
     order: 2;
   }
 }
-.hero .grid-item.hero__banner img {
+.hero .grid-item.hero__banner picture {
+  height: 100%;
+}
+.hero .grid-item.hero__banner picture img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1877,6 +1888,9 @@ a.btn {
   position: relative;
   margin: 100px 0;
   container: footer/inline-size;
+}
+.footer .logo {
+  max-width: 140px;
 }
 .footer::after {
   position: absolute;

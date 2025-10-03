@@ -6,6 +6,10 @@
 	margin: 100px 0;
 	container: footer / inline-size;
 
+	.logo {
+		max-width: 140px;
+	}
+
 	&::after {
 		position: absolute;
 		left: 0;

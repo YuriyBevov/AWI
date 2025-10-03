@@ -8,6 +8,11 @@ window.addEventListener("load", () => {
 	document.body.append(btn);
 
 	let isActive = false;
+	gsap.set(btn, {
+		y: "150px",
+		opacity: 0,
+	});
+
 	window.addEventListener("scroll", () => {
 		const viewportHeight = document.documentElement.clientHeight;
 
@@ -18,9 +23,11 @@ window.addEventListener("load", () => {
 					btn,
 					{
 						y: "150px",
+						opacity: 0,
 					},
 					{
 						y: "0",
+						opacity: 1,
 						duration: 0.7,
 						ease: "back",
 					},
@@ -33,9 +40,11 @@ window.addEventListener("load", () => {
 					btn,
 					{
 						y: "0",
+						opacity: 1,
 					},
 					{
 						y: "150px",
+						opacity: 0,
 						duration: 0.5,
 						ease: "linear",
 					},

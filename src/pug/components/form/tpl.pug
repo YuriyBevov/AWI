@@ -3,7 +3,7 @@ include ../form-controls/textarea/tpl.pug
 include ../form-controls/input/tpl.pug
 
 mixin form(data)
-  form.form(action="/public/mail.php" method="POST" class= data.cls)
+  form.form(action="mail.php" method="POST" class= data.cls)
     input(type="hidden" name="recaptcha" class="g-recaptcha-response" value="")
 
     each field in data.fields
