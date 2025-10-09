@@ -16,6 +16,10 @@
 		margin-bottom: clamp(20px, 3vw, 30px);
 	}
 
+	iframe {
+		width: 100%;
+	}
+
 	iframe,
 	.switcher {
 		grid-column: -1/1;

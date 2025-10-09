@@ -2,7 +2,6 @@
 @use "@styles/mixins/container-queries" as *;
 
 .hero {
-	padding-top: 0;
 	container: hero / inline-size;
 
 	.container {
@@ -64,6 +63,8 @@
 				}
 				picture {
 					height: 100%;
+					overflow: hidden;
+					border-radius: 30px;
 					img {
 						width: 100%;
 						height: 100%;
@@ -95,17 +96,6 @@
 					border-radius: 30px;
 					overflow: hidden;
 					width: 100%;
-					position: relative;
-
-					&::after {
-						content: "";
-						position: absolute;
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						background-color: rgba(1, 82, 164, 0.4);
-					}
 
 					img {
 						width: 100%;

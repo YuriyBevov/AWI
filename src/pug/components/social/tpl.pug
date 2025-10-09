@@ -5,5 +5,5 @@ mixin social(data)
     ul
       each item in data.items
         li
-          a(href=item.link)
+          a(href=item.link target= item.target ? item.target : null rel="noopener noreferrer nofollow")
             img(src=item.icon alt=item.alt )

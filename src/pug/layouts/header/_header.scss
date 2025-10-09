@@ -7,6 +7,7 @@
 	z-index: 99;
 	background-color: var(--white-color);
 	container: header / inline-size;
+	border-bottom: 1px solid var(--gray-color);
 
 	&__top {
 		display: flex;

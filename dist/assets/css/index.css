@@ -226,6 +226,11 @@ img {
   display: flex;
   flex-direction: column;
 }
+.content-block a {
+  color: var(--danger-color);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
 .content-block ul,
 .content-block ol {
   margin: 10px 0;
@@ -234,6 +239,22 @@ img {
 .content-block p {
   margin: 0.5em 0;
 }
+.content-block ol {
+  counter-reset: section;
+  list-style-type: none;
+  padding-left: 0;
+}
+.content-block ol li::before {
+  counter-increment: section;
+  content: counters(section, ".") ". ";
+  font-weight: bold;
+}
+.content-block ol li {
+  display: block;
+}
+.content-block ol ol {
+  padding-left: 20px;
+}
 
 .header {
   position: sticky;
@@ -241,6 +262,7 @@ img {
   z-index: 99;
   background-color: var(--white-color);
   container: header/inline-size;
+  border-bottom: 1px solid var(--gray-color);
 }
 .header__top {
   display: flex;
@@ -622,6 +644,7 @@ img {
 @container header (min-width: 960px ) {
   .nav--header .nav__list {
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 @container header (min-width: 960px ) {
@@ -669,8 +692,8 @@ img {
   border: 2px solid rgba(77, 114, 152, 0.15);
 }
 .label--colored {
-  border-color: var(--primary-light-color);
-  color: var(--primary-light-color);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 .label--dotted {
   position: relative;
@@ -1411,10 +1434,12 @@ a.btn {
 
 .policy-modal {
   width: fit-content;
-  max-width: 1140px;
+  max-width: 90vw;
 }
 .policy-modal .modal-header .title {
   font-size: clamp(16px, 5vw, 22px);
+  max-width: 480px;
+  text-wrap: balance;
 }
 
 .modal-overlay:has(.policy-modal) {
@@ -1591,7 +1616,6 @@ a.btn {
   }
 }
 .hero {
-  padding-top: 0;
   container: hero/inline-size;
 }
 .hero .container {
@@ -1657,6 +1681,8 @@ a.btn {
 }
 .hero .grid-item.hero__banner picture {
   height: 100%;
+  overflow: hidden;
+  border-radius: 30px;
 }
 .hero .grid-item.hero__banner picture img {
   width: 100%;
@@ -1687,16 +1713,6 @@ a.btn {
   border-radius: 30px;
   overflow: hidden;
   width: 100%;
-  position: relative;
-}
-.hero .grid-item.hero__side .banner-sm::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(1, 82, 164, 0.4);
 }
 .hero .grid-item.hero__side .banner-sm img {
   width: 100%;
@@ -1837,6 +1853,9 @@ a.btn {
 }
 .affiliate .switcher {
   margin-bottom: clamp(20px, 3vw, 30px);
+}
+.affiliate iframe {
+  width: 100%;
 }
 .affiliate iframe,
 .affiliate .switcher {

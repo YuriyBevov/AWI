@@ -121,6 +121,7 @@
 
 			@include container-up("header", $desktop-view-width) {
 				flex-direction: row;
+				justify-content: space-around;
 				// border-bottom: 1px solid var(--gray-color);
 			}
 		}

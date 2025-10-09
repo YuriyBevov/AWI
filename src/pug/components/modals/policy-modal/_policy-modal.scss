@@ -1,8 +1,10 @@
 .policy-modal {
 	width: fit-content;
-	max-width: 1140px;
+	max-width: 90vw;
 	.modal-header .title {
 		font-size: clamp(16px, 5vw, 22px);
+		max-width: 480px;
+		text-wrap: balance;
 	}
 }
 

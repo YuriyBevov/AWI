@@ -25,7 +25,7 @@ mixin staff-preview-card(data)
           modalID: 'staff-preview-modal'
         })
     
-    template(id='staff-preview-modal-tpl' data-title= data.name)
+    template(data-title= data.name).staff-preview-modal-tpl
       span.subtitle= data.position
       if data.detailText
         != data.detailText

@@ -3,6 +3,6 @@ mixin mainBtn(data)
 		span!= data.text ? data.text : 'Подробнее'
 
 		if data.isIconed
-			.btn__icon-wrap
+			span.btn__icon-wrap
 				svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
 					use(xlink:href="./assets/sprite.svg#chevron")

@@ -17,7 +17,7 @@ mixin schedule-card(data)
         dataAffiliate: data.title ? data.title : ''
       })
 
-    template(id='cost-modal-tpl' data-title="Стоимость занятий")
+    template(data-title="Стоимость занятий").cost-modal-tpl
       p.text Обучаем с нуля девочек и мальчиков школьного и дошкольного возраста спортивному и синхронному плаванию
       span.title!= data.title
 

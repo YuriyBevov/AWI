@@ -9312,7 +9312,7 @@ document.addEventListener("click", function(evt) {
   if (!opener) return;
   const card = opener.closest(".staff-preview-card");
   const container = card.parentElement;
-  const template = container.querySelector("template#staff-preview-modal-tpl");
+  const template = container.querySelector("template.staff-preview-modal-tpl");
   const modalContent = template.content.cloneNode(true);
   const modal = document.getElementById("staff-preview-modal");
   const modalContentContainer = modal.querySelector(".modal-content");
@@ -9328,7 +9328,7 @@ document.addEventListener("click", function(evt) {
   if (!opener) return;
   const card = opener.closest(".schedule-card");
   const container = card.parentElement;
-  const template = container.querySelector("template#cost-modal-tpl");
+  const template = container.querySelector("template.cost-modal-tpl");
   const modalContent = template.content.cloneNode(true);
   const modal = document.getElementById("cost-modal");
   const modalContentContainer = modal.querySelector(".modal-content");
